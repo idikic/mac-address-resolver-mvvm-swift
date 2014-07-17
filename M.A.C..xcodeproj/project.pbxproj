@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69765F3F1977B8B600060E8A /* MACAddressStore.swift */; };
+		69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */; };
+		69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1161976C3C80063DF1A /* MACAddressItem.swift */; };
 		69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D4D61B1976B80900907FA7 /* AppDelegate.swift */; };
 		69D4D61E1976B80900907FA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D4D61D1976B80900907FA7 /* ViewController.swift */; };
 		69D4D6211976B80900907FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D4D61F1976B80900907FA7 /* Main.storyboard */; };
@@ -25,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		69765F3F1977B8B600060E8A /* MACAddressStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressStore.swift; sourceTree = "<group>"; };
+		69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIMasterTableViewController.swift; sourceTree = "<group>"; };
+		69BEF1161976C3C80063DF1A /* MACAddressItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressItem.swift; sourceTree = "<group>"; };
 		69D4D6161976B80900907FA7 /* M.A.C..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M.A.C..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D4D61A1976B80900907FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69D4D61B1976B80900907FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,9 +60,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69BEF1121976C1720063DF1A /* CONTROLLERS */ = {
+			isa = PBXGroup;
+			children = (
+				69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */,
+			);
+			name = CONTROLLERS;
+			sourceTree = "<group>";
+		};
+		69BEF1151976C39C0063DF1A /* DATA MODEL */ = {
+			isa = PBXGroup;
+			children = (
+				69BEF1161976C3C80063DF1A /* MACAddressItem.swift */,
+				69765F3F1977B8B600060E8A /* MACAddressStore.swift */,
+			);
+			name = "DATA MODEL";
+			sourceTree = "<group>";
+		};
 		69D4D60D1976B80900907FA7 = {
 			isa = PBXGroup;
 			children = (
+				69BEF1151976C39C0063DF1A /* DATA MODEL */,
+				69BEF1121976C1720063DF1A /* CONTROLLERS */,
 				69D4D6181976B80900907FA7 /* M.A.C. */,
 				69D4D62B1976B80900907FA7 /* M.A.C.Tests */,
 				69D4D6171976B80900907FA7 /* Products */,
@@ -209,6 +234,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				69D4D61E1976B80900907FA7 /* ViewController.swift in Sources */,
+				69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */,
+				69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */,
+				69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */,
 				69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +425,7 @@
 				69D4D6341976B80900907FA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		69D4D6351976B80900907FA7 /* Build configuration list for PBXNativeTarget "M.A.C.Tests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +434,7 @@
 				69D4D6371976B80900907FA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
