@@ -52,6 +52,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mjN-uh-HRK" kind="presentation" id="kHQ-WR-6JN"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -67,6 +70,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ol-aW-Rqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1223" y="-7"/>
+        </scene>
+        <!--MAC ADDRESS LOOKUP-->
+        <scene sceneID="49p-p9-TKm">
+            <objects>
+                <viewController id="Yec-kt-yz8" customClass="IKIDetailViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N8N-Bg-KuD"/>
+                        <viewControllerLayoutGuide type="bottom" id="hE1-rM-2GU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XHr-ZD-IpB">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pp8-ze-2Wv">
+                                <rect key="frame" x="20" y="82" width="440" height="29"/>
+                                <segments>
+                                    <segment title="Picker"/>
+                                    <segment title="IP"/>
+                                    <segment title="BarCode "/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="tap to start" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zeu-or-di2">
+                                <rect key="frame" x="20" y="118" width="440" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3d6-Ym-CgW">
+                                <rect key="frame" x="209" y="173" width="63" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="qNC-rI-y9J"/>
+                                    <constraint firstAttribute="width" constant="63" id="qR2-bU-EbG"/>
+                                </constraints>
+                                <state key="normal" title="LOOKUP">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Zeu-or-di2" secondAttribute="trailing" constant="20" id="aSn-fs-I0f"/>
+                            <constraint firstItem="Zeu-or-di2" firstAttribute="leading" secondItem="XHr-ZD-IpB" secondAttribute="leading" constant="20" id="fOL-1D-0Yu"/>
+                            <constraint firstItem="Zeu-or-di2" firstAttribute="top" secondItem="pp8-ze-2Wv" secondAttribute="bottom" constant="8" id="g3j-za-2MO"/>
+                            <constraint firstItem="3d6-Ym-CgW" firstAttribute="top" secondItem="Zeu-or-di2" secondAttribute="bottom" constant="25" id="gLB-BL-jhv"/>
+                            <constraint firstAttribute="trailing" secondItem="pp8-ze-2Wv" secondAttribute="trailing" constant="20" id="obJ-Ev-mcY"/>
+                            <constraint firstAttribute="centerX" secondItem="3d6-Ym-CgW" secondAttribute="centerX" id="ohl-hf-enQ"/>
+                            <constraint firstItem="pp8-ze-2Wv" firstAttribute="top" secondItem="N8N-Bg-KuD" secondAttribute="bottom" constant="18" id="xHA-DA-4pH"/>
+                            <constraint firstItem="pp8-ze-2Wv" firstAttribute="leading" secondItem="XHr-ZD-IpB" secondAttribute="leading" constant="20" id="ymT-Vu-jnZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="MAC ADDRESS LOOKUP" id="ZYm-VL-sYb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="ziv-J2-l9L">
+                            <connections>
+                                <action selector="dismissDetailViewController:" destination="Yec-kt-yz8" id="CVS-dp-sI5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="a50-JE-9vM">
+                            <connections>
+                                <action selector="dismissDetailViewController:" destination="Yec-kt-yz8" id="NlE-q9-Fjb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NVK-zV-rIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2533" y="-7"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1eF-tI-xS9">
@@ -288,6 +356,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gy1-h4-1ah" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="531" y="1319"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7d2-Ke-sZj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mjN-uh-HRK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NRy-cg-fai">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Yec-kt-yz8" kind="relationship" relationship="rootViewController" id="P9d-ko-YVt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oMo-hh-4an" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1936" y="-7"/>
         </scene>
     </scenes>
 </document>

@@ -23,6 +23,14 @@ class IKIMasterTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = addButton
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+    
+        // TODO - is this needed ?
+        self.tableView.reloadData()
+    
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
