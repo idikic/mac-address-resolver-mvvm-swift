@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69765F3F1977B8B600060E8A /* MACAddressStore.swift */; };
+		697AABF1197947BB0071F68D /* IKIUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AABF0197947BB0071F68D /* IKIUtility.swift */; };
 		69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */; };
 		69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1161976C3C80063DF1A /* MACAddressItem.swift */; };
 		69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D4D61B1976B80900907FA7 /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		69765F3F1977B8B600060E8A /* MACAddressStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressStore.swift; sourceTree = "<group>"; };
+		697AABF0197947BB0071F68D /* IKIUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIUtility.swift; sourceTree = "<group>"; };
 		69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIMasterTableViewController.swift; sourceTree = "<group>"; };
 		69BEF1161976C3C80063DF1A /* MACAddressItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressItem.swift; sourceTree = "<group>"; };
 		69D4D6161976B80900907FA7 /* M.A.C..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M.A.C..app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		697AABEF1979479B0071F68D /* HELPERS */ = {
+			isa = PBXGroup;
+			children = (
+				697AABF0197947BB0071F68D /* IKIUtility.swift */,
+			);
+			name = HELPERS;
+			sourceTree = "<group>";
+		};
 		69BEF1121976C1720063DF1A /* CONTROLLERS */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +90,7 @@
 		69D4D60D1976B80900907FA7 = {
 			isa = PBXGroup;
 			children = (
+				697AABEF1979479B0071F68D /* HELPERS */,
 				69BEF1151976C39C0063DF1A /* DATA MODEL */,
 				69BEF1121976C1720063DF1A /* CONTROLLERS */,
 				69D4D6181976B80900907FA7 /* M.A.C. */,
@@ -237,6 +248,7 @@
 				69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */,
 				69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */,
 				69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */,
+				697AABF1197947BB0071F68D /* IKIUtility.swift in Sources */,
 				69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

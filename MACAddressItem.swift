@@ -23,6 +23,7 @@ class MACAddressItem: NSObject , NSCoding {
     init(macAddress: String) {
     
         self.macAddress = macAddress
+        self.company = "unknown"
         self.dateCreated = NSDate.date()
         
         /*
