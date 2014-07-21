@@ -302,7 +302,7 @@ const int ZX_TYPE_INFO_MASK_PATTERN = 0x5412;
 
   ZXBitArray *maskBits = [[ZXBitArray alloc] init];
   [maskBits appendBits:ZX_TYPE_INFO_MASK_PATTERN numBits:15];
-  [bits xor:maskBits];
+  [bits xor_iki:maskBits];
 
   if ([bits size] != 15) { // Just in case.
     NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"should not happen but we got: %d", [bits size]]};

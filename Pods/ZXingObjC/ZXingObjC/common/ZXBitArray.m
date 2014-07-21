@@ -225,7 +225,7 @@
   }
 }
 
-- (void)xor:(ZXBitArray *)other {
+- (void)xor_iki:(ZXBitArray *)other {
   if (self.bitsLength != other.bitsLength) {
     @throw [NSException exceptionWithName:NSInvalidArgumentException
                                    reason:@"Sizes don't match"

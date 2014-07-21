@@ -106,7 +106,12 @@
 
 - (void)appendBitArray:(ZXBitArray *)other;
 
-- (void)xor:(ZXBitArray *)other;
+/*
+ *  xor is not reserved keyword in Swift or Obj-C, 
+ *  so it seems like a compiler BUG
+ *  refactoring is needed
+ */
+- (void)xor_iki:(ZXBitArray *)other;
 
 /**
  *
