@@ -40,7 +40,7 @@ class MACAddressItem: NSObject , NSCoding {
     }
     
     
-    func description() -> String {
+    func description_iki() -> String {
     
         var stringDescription: String = "I'am MAC:\(self.macAddress), created at:\(self.dateCreated)"
         

@@ -9,4 +9,3 @@
 
 #import <Reachability/Reachability.h>
 #import <TestFlight.h>
-#import <ZXingObjC/ZXingObjC.h>

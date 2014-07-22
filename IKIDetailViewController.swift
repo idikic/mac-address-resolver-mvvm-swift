@@ -10,6 +10,14 @@ import UIKit
 
 class IKIDetailViewController: UIViewController {
 
+    let macAddressItem: MACAddressItem?
+    
+    @IBOutlet weak var segmentedControlInputTypes: UISegmentedControl!
+    
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var buttonLookUp: UIButton!
+    @IBOutlet weak var textViewResults: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +55,31 @@ class IKIDetailViewController: UIViewController {
         
     }
     
+    // # pragma mark - UI SEGMENTED CONTROL
+    func configureSegmentedControl () {
+    
+        self.segmentedControlInputTypes.targetForAction("segmentedControlAction:", withSender: self.segmentedControlInputTypes)
+    
+    }
+    
+    func segmentedControlAction(segmentedControl: UISegmentedControl) {
+    
+        // Clean up
+        self.textField.text = ""
+        self.textField.resignFirstResponder()
+        
+        if segmentedControl.selectedSegmentIndex == 2 {
+        
+            self.textField.enabled = false
+            
+            
+            
+            
+        }
+        
+        
+        
+    }
 
 
 }

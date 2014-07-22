@@ -1,18 +1,13 @@
 PODS:
   - Reachability (3.1.1)
   - TestFlightSDK (3.0.2)
-  - ZXingObjC (3.0.1):
-    - ZXingObjC/All
-  - ZXingObjC/All (3.0.1)
 
 DEPENDENCIES:
   - Reachability (~> 3.1.1)
   - TestFlightSDK (~> 3.0.2)
-  - ZXingObjC (~> 3.0)
 
 SPEC CHECKSUMS:
   Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
   TestFlightSDK: 0c24c533748d0d84bfe7a3cb6036fa79124d84ee
-  ZXingObjC: e21ba2d24fdb226d4c6c8484aa901c0381bdf633
 
 COCOAPODS: 0.33.1
