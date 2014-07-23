@@ -7,22 +7,28 @@
 //
 
 import UIKit
+import AVFoundation
 
-class IKIDetailViewController: UIViewController {
-
+class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+    
+    // # pragma mark - Properties
     let macAddressItem: MACAddressItem?
+   
     
+    // # pragma mark - Outlets
     @IBOutlet weak var segmentedControlInputTypes: UISegmentedControl!
-    
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var buttonLookUp: UIButton!
     @IBOutlet weak var textViewResults: UITextView!
     
     
+    // # pragma mark - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +37,7 @@ class IKIDetailViewController: UIViewController {
     }
     
 
-    /*
+    
     // #pragma mark - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -39,7 +45,40 @@ class IKIDetailViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        
+        if identifier == "BarcodeScanner" {
+            
+            var isCamera = UIImagePickerController.isCameraDeviceAvailable(.Rear)
+            
+            if !isCamera {
+                
+                let alert = UIAlertController(title: "WARNING", message: "No available camera", preferredStyle: .Alert)
+                let actionOK = UIAlertAction(title: "OK", style: .Default, handler: {
+                    
+                    (action: UIAlertAction!) -> Void in
+                    
+                        alert .dismissViewControllerAnimated(true, completion: nil)
+                    
+                    })
+                
+                alert.addAction(actionOK)
+                
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+                return false
+            }
+            
+            return true
+            
+        } else {
+            
+            return true
+        }
+        
+        
+    }
     
     // # pragma mark - ACTION
     @IBAction func dismissDetailViewController(sender: AnyObject) {
@@ -55,31 +94,4 @@ class IKIDetailViewController: UIViewController {
         
     }
     
-    // # pragma mark - UI SEGMENTED CONTROL
-    func configureSegmentedControl () {
-    
-        self.segmentedControlInputTypes.targetForAction("segmentedControlAction:", withSender: self.segmentedControlInputTypes)
-    
-    }
-    
-    func segmentedControlAction(segmentedControl: UISegmentedControl) {
-    
-        // Clean up
-        self.textField.text = ""
-        self.textField.resignFirstResponder()
-        
-        if segmentedControl.selectedSegmentIndex == 2 {
-        
-            self.textField.enabled = false
-            
-            
-            
-            
-        }
-        
-        
-        
-    }
-
-
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		694D59D0197BC11400C53907 /* IKIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D59CF197BC11400C53907 /* IKIDetailViewController.swift */; };
 		69518ED4B93440F89C4E63AA /* libPods-M.A.C..a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8ED48EF53064F89A38C49BE /* libPods-M.A.C..a */; };
+		696F1F51197E7B1000906434 /* IKIScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F1F50197E7B1000906434 /* IKIScannerViewController.swift */; };
 		69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69765F3F1977B8B600060E8A /* MACAddressStore.swift */; };
 		697AABF1197947BB0071F68D /* IKIUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AABF0197947BB0071F68D /* IKIUtility.swift */; };
 		69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		694D59CF197BC11400C53907 /* IKIDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIDetailViewController.swift; sourceTree = "<group>"; };
 		694D59D2197BD4E300C53907 /* M.A.C.-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "M.A.C.-Bridging-Header.h"; sourceTree = "<group>"; };
+		696F1F50197E7B1000906434 /* IKIScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIScannerViewController.swift; sourceTree = "<group>"; };
 		69765F3F1977B8B600060E8A /* MACAddressStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressStore.swift; sourceTree = "<group>"; };
 		697AABF0197947BB0071F68D /* IKIUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIUtility.swift; sourceTree = "<group>"; };
 		69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIMasterTableViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */,
 				694D59CF197BC11400C53907 /* IKIDetailViewController.swift */,
+				696F1F50197E7B1000906434 /* IKIScannerViewController.swift */,
 			);
 			name = CONTROLLERS;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				697AABF1197947BB0071F68D /* IKIUtility.swift in Sources */,
 				69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */,
 				694D59D0197BC11400C53907 /* IKIDetailViewController.swift in Sources */,
+				696F1F51197E7B1000906434 /* IKIScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = M.A.C./Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "M.A.C.-Bridging-Header.h";
@@ -445,6 +450,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = M.A.C./Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "M.A.C.-Bridging-Header.h";
