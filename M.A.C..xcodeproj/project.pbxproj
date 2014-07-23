@@ -15,7 +15,6 @@
 		69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */; };
 		69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1161976C3C80063DF1A /* MACAddressItem.swift */; };
 		69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D4D61B1976B80900907FA7 /* AppDelegate.swift */; };
-		69D4D61E1976B80900907FA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D4D61D1976B80900907FA7 /* ViewController.swift */; };
 		69D4D6211976B80900907FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D4D61F1976B80900907FA7 /* Main.storyboard */; };
 		69D4D6231976B80900907FA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69D4D6221976B80900907FA7 /* Images.xcassets */; };
 		69D4D62F1976B80900907FA7 /* M_A_C_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D4D62E1976B80900907FA7 /* M_A_C_Tests.swift */; };
@@ -42,7 +41,6 @@
 		69D4D6161976B80900907FA7 /* M.A.C..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M.A.C..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D4D61A1976B80900907FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69D4D61B1976B80900907FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		69D4D61D1976B80900907FA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		69D4D6201976B80900907FA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69D4D6221976B80900907FA7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		69D4D6281976B80900907FA7 /* M.A.C.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M.A.C.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				69D4D61B1976B80900907FA7 /* AppDelegate.swift */,
-				69D4D61D1976B80900907FA7 /* ViewController.swift */,
 				69D4D61F1976B80900907FA7 /* Main.storyboard */,
 				69D4D6221976B80900907FA7 /* Images.xcassets */,
 				69D4D6191976B80900907FA7 /* Supporting Files */,
@@ -309,7 +306,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69D4D61E1976B80900907FA7 /* ViewController.swift in Sources */,
 				69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */,
 				69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */,
 				69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */,
