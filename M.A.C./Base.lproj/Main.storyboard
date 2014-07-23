@@ -174,8 +174,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3c-or-0BB">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sGJ-VG-6oR"/>
+                                    <barButtonItem title="1234567890" id="gYm-rC-BSd"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PcX-gZ-gHG"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hkY-Ny-NeC" firstAttribute="top" secondItem="g3c-or-0BB" secondAttribute="bottom" id="339-6w-VUp"/>
+                            <constraint firstAttribute="trailing" secondItem="g3c-or-0BB" secondAttribute="trailing" id="DHx-gr-d41"/>
+                            <constraint firstItem="g3c-or-0BB" firstAttribute="leading" secondItem="huW-K9-VOg" secondAttribute="leading" id="Ueh-0T-bm7"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="BH2-IG-tEo"/>

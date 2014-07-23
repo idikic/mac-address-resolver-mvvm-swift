@@ -6,6 +6,20 @@
 //  Copyright (c) 2014 Iki. All rights reserved.
 //
 
+/* Here’s a quick rundown of the instance variables (via 'iOS 7 By Tutorials'):
+
+1.  captureSession – AVCaptureSession is the core media handling class in AVFoundation. It talks to the hardware to retrieve, process, and output video. A capture session wires together inputs and outputs, and controls the format and resolution of the output frames.
+
+2.  captureVideoDevice – AVCaptureDevice encapsulates the physical camera on a device. Modern iPhones have both front and rear cameras, while other devices may only have a single camera.
+
+3.  captureDeviceInput – To add an AVCaptureDevice to a session, wrap it in an AVCaptureDeviceInput. A capture session can have multiple inputs and multiple outputs.
+
+4.  previewLayer – AVCaptureVideoPreviewLayer provides a mechanism for displaying the current frames flowing through a capture session; it allows you to display the camera output in your UI.
+5.  running – This holds the state of the session; either the session is running or it’s not.
+6.  metadataOutput - AVCaptureMetadataOutput provides a callback to the application when metadata is detected in a video frame. AV Foundation supports two types of metadata: machine readable codes and face detection.
+
+*/
+
 import UIKit
 import AVFoundation
 
@@ -16,7 +30,7 @@ class IKIScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsD
     var captureSession: AVCaptureSession?
     var captureVideoDevice: AVCaptureDevice?
     var captureDeviceInput: AVCaptureDeviceInput?
-    var running: Bool?
+    var running: Bool = false
     var captureMetadataOutput: AVCaptureMetadataOutput?
     var scannerSessionAvailable: Bool = false
     
@@ -83,12 +97,14 @@ class IKIScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsD
     // #pragma mark - AV capture methods
     func setupCaptureSession() -> Bool {
     
+        // 1.
         if self.captureSession {
             
             // SCANNER SESSION ALREADY INITIALIZED
             return false
         }
     
+        // 2.
         self.captureVideoDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
             
         if let videoDevice = self.captureVideoDevice {
@@ -101,17 +117,20 @@ class IKIScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsD
         
         }
         
+        // 3.
         self.captureSession = AVCaptureSession()
         
+        // 4.
         var errorCaptureDeviceInput = NSErrorPointer()
         self.captureDeviceInput = AVCaptureDeviceInput(device: self.captureVideoDevice, error: errorCaptureDeviceInput)
         
+        // 5.
         if self.captureSession!.canAddInput(self.captureDeviceInput) {
             self.captureSession!.addInput(self.captureDeviceInput)
         
         }
         
-        
+        // 6.
         self.previewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
         self.previewLayer!.videoGravity = AVLayerVideoGravityResizeAspectFill
         
@@ -174,10 +193,14 @@ class IKIScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsD
             
             if object.isKindOfClass(AVMetadataMachineReadableCodeObject) {
             
-                let code = self.previewLayer?.transformedMetadataObjectForMetadataObject(object as AVMetadataObject) as AVMetadataMachineReadableCodeObject
-                    
-                self.macAddress = code.stringValue
-
+                let transformedMetaDataObject = self.previewLayer?.transformedMetadataObjectForMetadataObject(object as AVMetadataObject)
+                
+                let barcodeCode = transformedMetaDataObject as AVMetadataMachineReadableCodeObject
+                
+                // Process barcode
+                self.validBarcodeFound(barcodeCode)
+                
+                return
                 
             }
             
@@ -186,7 +209,43 @@ class IKIScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsD
     
     }
 
-
+    func validBarcodeFound(barcode: AVMetadataMachineReadableCodeObject) {
+    
+        self.stopRunning()
+        self.macAddress = barcode.stringValue
+        
+        let alert = UIAlertController(title: "BARCODE SUCCESFULLY SCANNED", message: self.macAddress, preferredStyle: .Alert)
+        let actionOK = UIAlertAction(title: "OK", style: .Default, handler: {
+            
+            (action: UIAlertAction!) -> Void in
+            
+            alert .dismissViewControllerAnimated(true, completion: nil)
+            
+            })
+        
+        let actionContinueScanning = UIAlertAction(title: "Try again", style: .Default, handler: {
+            
+            (action: UIAlertAction!) -> Void in
+        
+            alert.dismissViewControllerAnimated(true, completion: nil)
+            self.startRunning()
+            
+            })
+        
+        alert.addAction(actionOK)
+        alert.addAction(actionContinueScanning)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    
+    }
+    /*
+    - (void) validBarcodeFound:(Barcode *)barcode{
+    [self stopRunning];
+    [self.foundBarcodes addObject:barcode];
+    [self showBarcodeAlert:barcode];
+    }
+    
+    */
     
     
     /*
