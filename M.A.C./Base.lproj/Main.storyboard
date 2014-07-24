@@ -147,7 +147,7 @@
                         <outlet property="segmentedControlInputTypes" destination="pp8-ze-2Wv" id="uoN-oE-n5Z"/>
                         <outlet property="textField" destination="Zeu-or-di2" id="M0N-yf-rRg"/>
                         <outlet property="textViewResults" destination="eDi-6D-f6q" id="nxl-5Q-UwN"/>
-                        <segue destination="QmS-dX-ZNv" kind="show" identifier="BarcodeScannerSegue" id="5vX-63-Scy"/>
+                        <segue destination="QmS-dX-ZNv" kind="show" identifier="BarcodeScannerSegue" id="iNE-ZX-uLT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVK-zV-rIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -193,6 +193,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="BARCODE SCANNER" id="eK6-IX-IO9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGa-LR-hp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

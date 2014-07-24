@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate,ScannerViewDelegate {
     
     // # pragma mark - Properties
     let macAddressItem: MACAddressItem?
@@ -43,43 +43,23 @@ class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsD
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        // SETUP SCANNER VIEW CONTROLLER
+        var scannerViewController = segue.destinationViewController as IKIScannerViewController
+        scannerViewController.delegate = self
+        
+        
     }
     
+    /*
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         
-        if identifier == "BarcodeScannerSegue" {
-            
-            var isCamera = UIImagePickerController.isCameraDeviceAvailable(.Rear)
-            
-            if !isCamera {
-                
-                let alert = UIAlertController(title: "WARNING", message: "No available camera", preferredStyle: .Alert)
-                let actionOK = UIAlertAction(title: "OK", style: .Default, handler: {
-                    
-                    (action: UIAlertAction!) -> Void in
-                    
-                        alert .dismissViewControllerAnimated(true, completion: nil)
-                    
-                    })
-                
-                alert.addAction(actionOK)
-                
-                self.presentViewController(alert, animated: true, completion: nil)
-                
-                return false
-            } else {
-                return true
-            }
-            
-        } else {
-            
-            return true
-        }
-        
-        
+
     }
+    */
     
     // # pragma mark - ACTION
     @IBAction func dismissDetailViewController(sender: AnyObject) {
@@ -101,8 +81,28 @@ class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         
         if segmentedControl.selectedSegmentIndex == 2 {
         
-            shouldPerformSegueWithIdentifier("BarcodeScannerSegue", sender: segmentedControl)
-        
+            var isCamera = UIImagePickerController.isCameraDeviceAvailable(.Rear)
+            
+            if !isCamera {
+                
+                let alert = UIAlertController(title: "WARNING", message: "No available camera", preferredStyle: .Alert)
+                let actionOK = UIAlertAction(title: "OK", style: .Default, handler: {
+                    
+                    (action: UIAlertAction!) -> Void in
+                    
+                    alert .dismissViewControllerAnimated(true, completion: nil)
+                    
+                    })
+                
+                alert.addAction(actionOK)
+                
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+            } else {
+                
+                performSegueWithIdentifier("BarcodeScannerSegue", sender: segmentedControl)
+               
+            }
         }
         
     }
@@ -116,5 +116,10 @@ class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         
     }
     
+    // #pragma mark - Scanner View Delegate
+    func didFinishedScanningMacAddress(macAddress: String?) {
     
+        textField.text = macAddress
+        
+    }
 }

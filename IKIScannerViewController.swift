@@ -23,6 +23,12 @@
 import UIKit
 import AVFoundation
 
+protocol ScannerViewDelegate {
+
+    func didFinishedScanningMacAddress (macAddress: String?)
+
+}
+
 class IKIScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
 
     var macAddress: String?
@@ -45,6 +51,7 @@ class IKIScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsD
                                 "com.intermec.Code93",
                                 "org.iso.Code128"]
     
+    var delegate: ScannerViewDelegate?
     
     // #pragma mark - View Lifecycle
     override func viewDidLoad() {
@@ -85,6 +92,8 @@ class IKIScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsD
         if self.scannerSessionAvailable {
             self.stopRunning()
         }
+        
+        self.delegate?.didFinishedScanningMacAddress(self.macAddress)
         
     }
 
@@ -238,14 +247,6 @@ class IKIScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsD
         self.presentViewController(alert, animated: true, completion: nil)
     
     }
-    /*
-    - (void) validBarcodeFound:(Barcode *)barcode{
-    [self stopRunning];
-    [self.foundBarcodes addObject:barcode];
-    [self showBarcodeAlert:barcode];
-    }
-    
-    */
     
     
     /*
