@@ -107,6 +107,18 @@ class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         
     }
     
+    @IBAction func buttonDownload(sender: AnyObject) {
+        
+        let downloader = Downloader(url: "https://www.nsscreencast.com/api/episodes.json")
+        downloader.downloadJSON() {
+        
+        (let arrayObjects) in
+            
+                println(arrayObjects)
+        
+        }
+        
+    }
     // # pragma mark - Configuration
     func configureDefaultSegmentedControl() {
         

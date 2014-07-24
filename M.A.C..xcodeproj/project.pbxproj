@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6947D818198104F600640A15 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6947D817198104F600640A15 /* Downloader.swift */; };
 		694D59D0197BC11400C53907 /* IKIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D59CF197BC11400C53907 /* IKIDetailViewController.swift */; };
 		69518ED4B93440F89C4E63AA /* libPods-M.A.C..a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8ED48EF53064F89A38C49BE /* libPods-M.A.C..a */; };
 		696F1F51197E7B1000906434 /* IKIScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F1F50197E7B1000906434 /* IKIScannerViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6947D817198104F600640A15 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		694D59CF197BC11400C53907 /* IKIDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIDetailViewController.swift; sourceTree = "<group>"; };
 		694D59D2197BD4E300C53907 /* M.A.C.-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "M.A.C.-Bridging-Header.h"; sourceTree = "<group>"; };
 		696F1F50197E7B1000906434 /* IKIScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIScannerViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				697AABF0197947BB0071F68D /* IKIUtility.swift */,
+				6947D817198104F600640A15 /* Downloader.swift */,
 			);
 			name = HELPERS;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			files = (
 				69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */,
 				69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */,
+				6947D818198104F600640A15 /* Downloader.swift in Sources */,
 				69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */,
 				697AABF1197947BB0071F68D /* IKIUtility.swift in Sources */,
 				69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */,

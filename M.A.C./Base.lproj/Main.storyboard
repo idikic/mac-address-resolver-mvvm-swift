@@ -106,6 +106,9 @@
                                 <state key="normal" title="LOOKUP">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonDownload:" destination="Yec-kt-yz8" eventType="touchUpInside" id="pMc-nu-1Cv"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="RESULTS" translatesAutoresizingMaskIntoConstraints="NO" id="eDi-6D-f6q">
                                 <rect key="frame" x="20" y="211" width="560" height="369"/>
