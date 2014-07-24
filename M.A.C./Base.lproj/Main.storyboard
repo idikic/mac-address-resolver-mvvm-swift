@@ -106,9 +106,6 @@
                                 <state key="normal" title="LOOKUP">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="QmS-dX-ZNv" kind="show" identifier="BarcodeScanner" id="1dB-Xn-vmb"/>
-                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="RESULTS" translatesAutoresizingMaskIntoConstraints="NO" id="eDi-6D-f6q">
                                 <rect key="frame" x="20" y="211" width="560" height="369"/>
@@ -150,6 +147,7 @@
                         <outlet property="segmentedControlInputTypes" destination="pp8-ze-2Wv" id="uoN-oE-n5Z"/>
                         <outlet property="textField" destination="Zeu-or-di2" id="M0N-yf-rRg"/>
                         <outlet property="textViewResults" destination="eDi-6D-f6q" id="nxl-5Q-UwN"/>
+                        <segue destination="QmS-dX-ZNv" kind="show" identifier="BarcodeScannerSegue" id="5vX-63-Scy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVK-zV-rIy" userLabel="First Responder" sceneMemberID="firstResponder"/>

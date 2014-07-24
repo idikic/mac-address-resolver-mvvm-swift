@@ -37,7 +37,7 @@ class IKIMasterTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // #pragma mark - ??
+    // MARK - Insert new object
     func insertNewObject(barButtonItem: UIBarButtonItem) {
     
         // Create a new MACAddress device

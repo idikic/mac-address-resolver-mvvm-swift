@@ -27,6 +27,7 @@ class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        configureDefaultSegmentedControl()
         
         
     }
@@ -48,7 +49,7 @@ class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         
-        if identifier == "BarcodeScanner" {
+        if identifier == "BarcodeScannerSegue" {
             
             var isCamera = UIImagePickerController.isCameraDeviceAvailable(.Rear)
             
@@ -68,9 +69,9 @@ class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsD
                 self.presentViewController(alert, animated: true, completion: nil)
                 
                 return false
+            } else {
+                return true
             }
-            
-            return true
             
         } else {
             
@@ -93,5 +94,27 @@ class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             })
         
     }
+    
+    func selectedSegmentDidChange(segmentedControl: UISegmentedControl) {
+        
+        NSLog("The selected segment changed for: \(segmentedControl).")
+        
+        if segmentedControl.selectedSegmentIndex == 2 {
+        
+            shouldPerformSegueWithIdentifier("BarcodeScannerSegue", sender: segmentedControl)
+        
+        }
+        
+    }
+    
+    // # pragma mark - Configuration
+    func configureDefaultSegmentedControl() {
+        
+        segmentedControlInputTypes.momentary = true
+        
+        segmentedControlInputTypes.addTarget(self, action: "selectedSegmentDidChange:", forControlEvents: .ValueChanged)
+        
+    }
+    
     
 }
