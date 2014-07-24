@@ -109,12 +109,12 @@ class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     
     @IBAction func buttonDownload(sender: AnyObject) {
         
-        let downloader = Downloader(url: "https://www.nsscreencast.com/api/episodes.json")
+        let downloader = Downloader(url: "http://www.macvendorlookup.com/api/v2/00-23-AB-7B-58-99")
         downloader.downloadJSON() {
         
-        (let arrayObjects) in
+        (let arrayOfDictionaryObjects) in
             
-                println(arrayObjects)
+                println(arrayOfDictionaryObjects)
         
         }
         

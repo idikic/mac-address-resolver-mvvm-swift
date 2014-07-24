@@ -51,9 +51,28 @@ class Downloader {
     
     private func parseJSON(data: NSData, completionHandler:(Array<AnyObject>?) -> ()) {
         
-        // Do a JSON parsing
-        completionHandler(nil)
-    
+        // Do a PARSING of JSON on background thread
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        dispatch_async(dispatch_get_global_queue(priority, 0), {
+            
+            () -> () in
+            
+            // Do a JSON parsing
+            var parsedJSON = NSJSONSerialization.JSONObjectWithData(data,
+                options: .AllowFragments,
+                error: nil)
+                as Array<Dictionary<String, AnyObject>>
+            
+            // Dispatch on MAIN THREAD
+            dispatch_async(dispatch_get_main_queue()) {
+            
+                completionHandler(parsedJSON)
+            
+            }
+            
+            
+            })
+        
     }
     
 }
