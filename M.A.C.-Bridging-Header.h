@@ -10,4 +10,3 @@
 
 #import <Reachability/Reachability.h>
 #import <TestFlight.h>
-#import "NSString+MACValidation.h"

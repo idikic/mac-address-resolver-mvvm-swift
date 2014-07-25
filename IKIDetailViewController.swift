@@ -109,16 +109,24 @@ class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     
     @IBAction func buttonDownload(sender: AnyObject) {
         
-        validateInput(self.textField.text)
-//        let downloader = Downloader(url: "http://www.macvendorlookup.com/api/v2/00-23-AB-7B-58-99")
-//        downloader.downloadJSON() {
-//        
-//        (let arrayOfDictionaryObjects) in
-//            
-//                println(arrayOfDictionaryObjects)
-//        
-//        }
+        if validateInput(self.textField.text) {
         
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            let downloader = Downloader(url: macAddressResolverURL + self.textField.text)
+            downloader.downloadJSON() {
+                
+                (let arrayOfDictionaryObjects) in
+                
+                
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                println(arrayOfDictionaryObjects)
+                
+                self.textViewResults.text = "\(arrayOfDictionaryObjects)"
+            }
+        
+        
+        }
+    
     }
     
     // # pragma mark - Validation
