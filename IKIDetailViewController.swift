@@ -109,16 +109,29 @@ class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     
     @IBAction func buttonDownload(sender: AnyObject) {
         
-        let downloader = Downloader(url: "http://www.macvendorlookup.com/api/v2/00-23-AB-7B-58-99")
-        downloader.downloadJSON() {
-        
-        (let arrayOfDictionaryObjects) in
-            
-                println(arrayOfDictionaryObjects)
-        
-        }
+        validateInput(self.textField.text)
+//        let downloader = Downloader(url: "http://www.macvendorlookup.com/api/v2/00-23-AB-7B-58-99")
+//        downloader.downloadJSON() {
+//        
+//        (let arrayOfDictionaryObjects) in
+//            
+//                println(arrayOfDictionaryObjects)
+//        
+//        }
         
     }
+    
+    // # pragma mark - Validation
+    func validateInput(inputString: String) -> Bool {
+    
+        var validMacAddress = inputString.isValidMacAddress(inputString)
+        
+        println("MAC ADDRESS: \(validMacAddress)")
+        
+        return true
+    
+    }
+    
     // # pragma mark - Configuration
     func configureDefaultSegmentedControl() {
         

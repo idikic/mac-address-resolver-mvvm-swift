@@ -13,12 +13,14 @@
 		696F1F51197E7B1000906434 /* IKIScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F1F50197E7B1000906434 /* IKIScannerViewController.swift */; };
 		69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69765F3F1977B8B600060E8A /* MACAddressStore.swift */; };
 		697AABF1197947BB0071F68D /* IKIUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AABF0197947BB0071F68D /* IKIUtility.swift */; };
+		69BDA25B1982684800E38FBB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BDA25A1982684800E38FBB /* StringExtensions.swift */; };
 		69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */; };
 		69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1161976C3C80063DF1A /* MACAddressItem.swift */; };
 		69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D4D61B1976B80900907FA7 /* AppDelegate.swift */; };
 		69D4D6211976B80900907FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D4D61F1976B80900907FA7 /* Main.storyboard */; };
 		69D4D6231976B80900907FA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69D4D6221976B80900907FA7 /* Images.xcassets */; };
 		69D4D62F1976B80900907FA7 /* M_A_C_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D4D62E1976B80900907FA7 /* M_A_C_Tests.swift */; };
+		69E3E47B1981381900C8BAA8 /* NSString+MACValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E3E47A1981381900C8BAA8 /* NSString+MACValidation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,7 @@
 		696F1F50197E7B1000906434 /* IKIScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIScannerViewController.swift; sourceTree = "<group>"; };
 		69765F3F1977B8B600060E8A /* MACAddressStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressStore.swift; sourceTree = "<group>"; };
 		697AABF0197947BB0071F68D /* IKIUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIUtility.swift; sourceTree = "<group>"; };
+		69BDA25A1982684800E38FBB /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIMasterTableViewController.swift; sourceTree = "<group>"; };
 		69BEF1161976C3C80063DF1A /* MACAddressItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressItem.swift; sourceTree = "<group>"; };
 		69D4D6161976B80900907FA7 /* M.A.C..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M.A.C..app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +51,8 @@
 		69D4D6281976B80900907FA7 /* M.A.C.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M.A.C.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D4D62D1976B80900907FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69D4D62E1976B80900907FA7 /* M_A_C_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M_A_C_Tests.swift; sourceTree = "<group>"; };
+		69E3E4791981381900C8BAA8 /* NSString+MACValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MACValidation.h"; sourceTree = "<group>"; };
+		69E3E47A1981381900C8BAA8 /* NSString+MACValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MACValidation.m"; sourceTree = "<group>"; };
 		779CD7E0A8BB4F31A227D802 /* Pods-M.A.C..xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M.A.C..xcconfig"; path = "Pods/Pods-M.A.C..xcconfig"; sourceTree = "<group>"; };
 		F8ED48EF53064F89A38C49BE /* libPods-M.A.C..a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-M.A.C..a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +97,7 @@
 			children = (
 				697AABF0197947BB0071F68D /* IKIUtility.swift */,
 				6947D817198104F600640A15 /* Downloader.swift */,
+				69BDA25A1982684800E38FBB /* StringExtensions.swift */,
 			);
 			name = HELPERS;
 			sourceTree = "<group>";
@@ -118,6 +124,7 @@
 		69D4D60D1976B80900907FA7 = {
 			isa = PBXGroup;
 			children = (
+				69E3E478198137F200C8BAA8 /* OBJ-C CODE */,
 				694D59D1197BD3A800C53907 /* HEADERS */,
 				697AABEF1979479B0071F68D /* HELPERS */,
 				69BEF1151976C39C0063DF1A /* DATA MODEL */,
@@ -173,6 +180,15 @@
 				69D4D62D1976B80900907FA7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69E3E478198137F200C8BAA8 /* OBJ-C CODE */ = {
+			isa = PBXGroup;
+			children = (
+				69E3E4791981381900C8BAA8 /* NSString+MACValidation.h */,
+				69E3E47A1981381900C8BAA8 /* NSString+MACValidation.m */,
+			);
+			name = "OBJ-C CODE";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +328,9 @@
 				69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */,
 				69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */,
 				6947D818198104F600640A15 /* Downloader.swift in Sources */,
+				69BDA25B1982684800E38FBB /* StringExtensions.swift in Sources */,
 				69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */,
+				69E3E47B1981381900C8BAA8 /* NSString+MACValidation.m in Sources */,
 				697AABF1197947BB0071F68D /* IKIUtility.swift in Sources */,
 				69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */,
 				694D59D0197BC11400C53907 /* IKIDetailViewController.swift in Sources */,

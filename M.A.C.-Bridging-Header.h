@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Iki. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 
 #import <Reachability/Reachability.h>
 #import <TestFlight.h>
+#import "NSString+MACValidation.h"
