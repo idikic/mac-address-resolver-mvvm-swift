@@ -65,14 +65,13 @@ extension String {
                 ++newSize
                 
             }
-            
-            
+            addrBuffPtr.destroy()
         }
         println("VALUE OF I: \(i)")
         println("VALUE OF S: \(s)")
         
         // DESTROY UnsafePointer
-        // tempPointer
+        tempPointer?.destroy()
         return (i == 12 && (s == 5 || s == 0))
     }
 }
