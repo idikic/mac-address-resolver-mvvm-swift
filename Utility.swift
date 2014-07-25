@@ -8,14 +8,14 @@
 
 import UIKit
 
-class IKIUtility: NSObject {
+class Utility: NSObject {
    
-    class var sharedStore : IKIUtility {
+    class var sharedStore : Utility {
         
     struct Singleton {
         
         // lazily initiated, thread-safe from "let"
-        static let instance = IKIUtility()
+        static let instance = Utility()
         
         }
         return Singleton.instance

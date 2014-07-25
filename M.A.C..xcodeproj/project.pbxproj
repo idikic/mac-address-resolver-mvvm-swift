@@ -12,8 +12,11 @@
 		69518ED4B93440F89C4E63AA /* libPods-M.A.C..a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8ED48EF53064F89A38C49BE /* libPods-M.A.C..a */; };
 		696F1F51197E7B1000906434 /* IKIScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F1F50197E7B1000906434 /* IKIScannerViewController.swift */; };
 		69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69765F3F1977B8B600060E8A /* MACAddressStore.swift */; };
-		697AABF1197947BB0071F68D /* IKIUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AABF0197947BB0071F68D /* IKIUtility.swift */; };
+		697AABF1197947BB0071F68D /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AABF0197947BB0071F68D /* Utility.swift */; };
 		699D0605198295D100993203 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699D0604198295D100993203 /* GlobalConstants.swift */; };
+		699D060819829AF200993203 /* NSString+IPValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D060719829AF200993203 /* NSString+IPValidation.m */; };
+		699D061319829BC800993203 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D061019829BC800993203 /* SimplePing.m */; };
+		699D061419829BC800993203 /* SimplePingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D061219829BC800993203 /* SimplePingHelper.m */; };
 		69BDA25B1982684800E38FBB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BDA25A1982684800E38FBB /* StringExtensions.swift */; };
 		69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */; };
 		69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1161976C3C80063DF1A /* MACAddressItem.swift */; };
@@ -21,7 +24,6 @@
 		69D4D6211976B80900907FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D4D61F1976B80900907FA7 /* Main.storyboard */; };
 		69D4D6231976B80900907FA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69D4D6221976B80900907FA7 /* Images.xcassets */; };
 		69D4D62F1976B80900907FA7 /* M_A_C_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D4D62E1976B80900907FA7 /* M_A_C_Tests.swift */; };
-		69E3E47B1981381900C8BAA8 /* NSString+MACValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E3E47A1981381900C8BAA8 /* NSString+MACValidation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +42,20 @@
 		694D59D2197BD4E300C53907 /* M.A.C.-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "M.A.C.-Bridging-Header.h"; sourceTree = "<group>"; };
 		696F1F50197E7B1000906434 /* IKIScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIScannerViewController.swift; sourceTree = "<group>"; };
 		69765F3F1977B8B600060E8A /* MACAddressStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressStore.swift; sourceTree = "<group>"; };
-		697AABF0197947BB0071F68D /* IKIUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIUtility.swift; sourceTree = "<group>"; };
+		697AABF0197947BB0071F68D /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		699D0604198295D100993203 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		699D060619829AF200993203 /* NSString+IPValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IPValidation.h"; sourceTree = "<group>"; };
+		699D060719829AF200993203 /* NSString+IPValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IPValidation.m"; sourceTree = "<group>"; };
+		699D060919829B0300993203 /* if_arp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = if_arp.h; path = Apple.Networking/if_arp.h; sourceTree = "<group>"; };
+		699D060A19829B0300993203 /* if_dl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = if_dl.h; path = Apple.Networking/if_dl.h; sourceTree = "<group>"; };
+		699D060B19829B0300993203 /* if_ether.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = if_ether.h; path = Apple.Networking/if_ether.h; sourceTree = "<group>"; };
+		699D060C19829B0300993203 /* if_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = if_types.h; path = Apple.Networking/if_types.h; sourceTree = "<group>"; };
+		699D060D19829B0300993203 /* nlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nlist.h; path = Apple.Networking/nlist.h; sourceTree = "<group>"; };
+		699D060E19829B0300993203 /* route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = route.h; path = Apple.Networking/route.h; sourceTree = "<group>"; };
+		699D060F19829BC800993203 /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		699D061019829BC800993203 /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
+		699D061119829BC800993203 /* SimplePingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePingHelper.h; sourceTree = "<group>"; };
+		699D061219829BC800993203 /* SimplePingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePingHelper.m; sourceTree = "<group>"; };
 		69BDA25A1982684800E38FBB /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIMasterTableViewController.swift; sourceTree = "<group>"; };
 		69BEF1161976C3C80063DF1A /* MACAddressItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressItem.swift; sourceTree = "<group>"; };
@@ -53,8 +67,6 @@
 		69D4D6281976B80900907FA7 /* M.A.C.Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M.A.C.Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D4D62D1976B80900907FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69D4D62E1976B80900907FA7 /* M_A_C_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M_A_C_Tests.swift; sourceTree = "<group>"; };
-		69E3E4791981381900C8BAA8 /* NSString+MACValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MACValidation.h"; sourceTree = "<group>"; };
-		69E3E47A1981381900C8BAA8 /* NSString+MACValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MACValidation.m"; sourceTree = "<group>"; };
 		779CD7E0A8BB4F31A227D802 /* Pods-M.A.C..xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M.A.C..xcconfig"; path = "Pods/Pods-M.A.C..xcconfig"; sourceTree = "<group>"; };
 		F8ED48EF53064F89A38C49BE /* libPods-M.A.C..a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-M.A.C..a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -89,6 +101,12 @@
 		694D59D1197BD3A800C53907 /* HEADERS */ = {
 			isa = PBXGroup;
 			children = (
+				699D060919829B0300993203 /* if_arp.h */,
+				699D060A19829B0300993203 /* if_dl.h */,
+				699D060B19829B0300993203 /* if_ether.h */,
+				699D060C19829B0300993203 /* if_types.h */,
+				699D060D19829B0300993203 /* nlist.h */,
+				699D060E19829B0300993203 /* route.h */,
 				694D59D2197BD4E300C53907 /* M.A.C.-Bridging-Header.h */,
 			);
 			name = HEADERS;
@@ -97,7 +115,7 @@
 		697AABEF1979479B0071F68D /* HELPERS */ = {
 			isa = PBXGroup;
 			children = (
-				697AABF0197947BB0071F68D /* IKIUtility.swift */,
+				697AABF0197947BB0071F68D /* Utility.swift */,
 				6947D817198104F600640A15 /* Downloader.swift */,
 				69BDA25A1982684800E38FBB /* StringExtensions.swift */,
 				699D0604198295D100993203 /* GlobalConstants.swift */,
@@ -188,8 +206,12 @@
 		69E3E478198137F200C8BAA8 /* OBJ-C CODE */ = {
 			isa = PBXGroup;
 			children = (
-				69E3E4791981381900C8BAA8 /* NSString+MACValidation.h */,
-				69E3E47A1981381900C8BAA8 /* NSString+MACValidation.m */,
+				699D060619829AF200993203 /* NSString+IPValidation.h */,
+				699D060719829AF200993203 /* NSString+IPValidation.m */,
+				699D060F19829BC800993203 /* SimplePing.h */,
+				699D061019829BC800993203 /* SimplePing.m */,
+				699D061119829BC800993203 /* SimplePingHelper.h */,
+				699D061219829BC800993203 /* SimplePingHelper.m */,
 			);
 			name = "OBJ-C CODE";
 			sourceTree = "<group>";
@@ -333,10 +355,12 @@
 				6947D818198104F600640A15 /* Downloader.swift in Sources */,
 				69BDA25B1982684800E38FBB /* StringExtensions.swift in Sources */,
 				69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */,
+				699D060819829AF200993203 /* NSString+IPValidation.m in Sources */,
 				699D0605198295D100993203 /* GlobalConstants.swift in Sources */,
-				69E3E47B1981381900C8BAA8 /* NSString+MACValidation.m in Sources */,
-				697AABF1197947BB0071F68D /* IKIUtility.swift in Sources */,
+				699D061419829BC800993203 /* SimplePingHelper.m in Sources */,
+				697AABF1197947BB0071F68D /* Utility.swift in Sources */,
 				69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */,
+				699D061319829BC800993203 /* SimplePing.m in Sources */,
 				694D59D0197BC11400C53907 /* IKIDetailViewController.swift in Sources */,
 				696F1F51197E7B1000906434 /* IKIScannerViewController.swift in Sources */,
 			);

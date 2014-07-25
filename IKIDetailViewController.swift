@@ -81,6 +81,7 @@ class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         
         if segmentedControl.selectedSegmentIndex == 2 {
         
+            self.buttonLookUp.setTitle("LOOKUP", forState: UIControlState.Normal)
             var isCamera = UIImagePickerController.isCameraDeviceAvailable(.Rear)
             
             if !isCamera {
@@ -103,6 +104,11 @@ class IKIDetailViewController: UIViewController, AVCaptureMetadataOutputObjectsD
                 performSegueWithIdentifier("BarcodeScannerSegue", sender: segmentedControl)
                
             }
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+        
+            self.textField.placeholder = "enter IP address of desired device"
+            self.buttonLookUp.setTitle("TRY TO EXTRACT MAC ADDRESS FROM IP", forState: UIControlState.Normal)
+        
         }
         
     }

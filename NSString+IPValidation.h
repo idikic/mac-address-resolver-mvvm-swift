@@ -1,5 +1,5 @@
 //
-//  NSString+MACValidation.h
+//  NSString+IPValidation.h
 //  M@C
 //
 //  Created by iki on 8/1/13.
@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (MACValidation)
+@interface NSString (IPValidation)
 
--(BOOL) isValidMacAddressOUI;
--(BOOL) isValidMacAddress;
+- (BOOL)isValidIPAddress;
 
 @end
