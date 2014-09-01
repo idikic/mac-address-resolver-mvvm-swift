@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>930EA78A-1464-4C85-B1DE-8C9107B98C00</string>
+	<key>IDESourceControlProjectName</key>
+	<string>M.A.C.</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F85B399AB5373DB0DA039637F82261FDB19A2ABE</key>
+		<string>https://github.com/idikic/mac-address-resolver-universal.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>M.A.C..xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F85B399AB5373DB0DA039637F82261FDB19A2ABE</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/idikic/mac-address-resolver-universal.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F85B399AB5373DB0DA039637F82261FDB19A2ABE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F85B399AB5373DB0DA039637F82261FDB19A2ABE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mac-address-resolver-universal</string>
+		</dict>
+	</array>
+</dict>
+</plist>

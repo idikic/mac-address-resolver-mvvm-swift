@@ -47,22 +47,22 @@ class MACAddressItem: NSObject , NSCoding {
         return stringDescription
     }
    
-    func encodeWithCoder(aCoder: NSCoder!) {
+    func encodeWithCoder(aCoder: NSCoder) {
     
         aCoder.encodeObject(macAddress, forKey: "macAddress")
-        aCoder.encodeObject(company, forKey: "company")
-        aCoder.encodeObject(department, forKey: "department")
-        aCoder.encodeObject(address1, forKey: "address1")
+        aCoder.encodeObject(company!, forKey: "company")
+        aCoder.encodeObject(department!, forKey: "department")
+        aCoder.encodeObject(address1!, forKey: "address1")
         
-        aCoder.encodeObject(address2, forKey: "address2")
-        aCoder.encodeObject(country, forKey: "country")
-        aCoder.encodeObject(locationOfDevice, forKey: "locationOfDevice")
+        aCoder.encodeObject(address2!, forKey: "address2")
+        aCoder.encodeObject(country!, forKey: "country")
+        aCoder.encodeObject(locationOfDevice!, forKey: "locationOfDevice")
         aCoder.encodeObject(dateCreated, forKey: "dateCreated")
         
         
     }
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
     
         self.macAddress = aDecoder.decodeObjectForKey("macAddress") as String
         self.company = aDecoder.decodeObjectForKey("company") as? String

@@ -24,16 +24,16 @@ extension String {
         var tempPointer: UnsafePointer<CChar>?
         
         // BRIDGE ??
-        mac?.withUnsafePointerToElements() {
+        mac?.withUnsafeBufferPointer() {
             
-            (let addrBuffPtr : UnsafePointer<CChar>) -> () in
+            (let addrBuffPtr : UnsafeBufferPointer<CChar>) -> () in
             
             var maxSize = mac?.count
             var newSize = 0
             
 
             // USE POINTER TO MEMORY
-            tempPointer = addrBuffPtr
+            tempPointer = addrBuffPtr.baseAddress
             
             while (maxSize != newSize) {
                 
@@ -65,13 +65,19 @@ extension String {
                 ++newSize
                 
             }
-            addrBuffPtr.destroy()
+            
+            // TODO: further investigation needed!!
+            //
+            //      addrBuffPtr.destroy()
         }
+
         println("VALUE OF I: \(i)")
         println("VALUE OF S: \(s)")
         
-        // DESTROY UnsafePointer
-        tempPointer?.destroy()
+        // TODO: further investigation needed!!
+        //
+        //      DESTROY UnsafePointer
+        //      tempPointer?.destroy()
         return (i == 12 && (s == 5 || s == 0))
     }
 }

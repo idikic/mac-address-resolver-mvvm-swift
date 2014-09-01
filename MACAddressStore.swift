@@ -32,7 +32,7 @@ class MACAddressStore: NSObject {
     }
     
     
-    init() {
+    override init() {
     
         super.init()
         
@@ -42,7 +42,7 @@ class MACAddressStore: NSObject {
         let unarchivedItems : AnyObject! = NSKeyedUnarchiver.unarchiveObjectWithFile(path)
         
         // If there were archived items saved, set _privateItems for the shared store equal to that
-        if unarchivedItems {
+        if unarchivedItems != nil {
         
             _privateItems = unarchivedItems as Array<MACAddressItem>
         

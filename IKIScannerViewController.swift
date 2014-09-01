@@ -107,7 +107,7 @@ class IKIScannerViewController: UIViewController,AVCaptureMetadataOutputObjectsD
     func setupCaptureSession() -> Bool {
     
         // 1.
-        if self.captureSession {
+        if (self.captureSession != nil) {
             
             // SCANNER SESSION ALREADY INITIALIZED
             return false
