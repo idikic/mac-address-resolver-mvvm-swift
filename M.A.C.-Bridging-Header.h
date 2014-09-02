@@ -11,3 +11,5 @@
 #import <Reachability/Reachability.h>
 #import <TestFlight.h>
 #import "NSString+IPValidation.h"
+#import "NetworkUtility.h"
+#import "SimplePingHelper.h"

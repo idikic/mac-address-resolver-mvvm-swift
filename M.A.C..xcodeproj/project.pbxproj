@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D26FE2719B4C0FD0039D7D4 /* NetworkUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26FE2619B4C0FD0039D7D4 /* NetworkUtility.m */; };
 		6947D818198104F600640A15 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6947D817198104F600640A15 /* Downloader.swift */; };
 		694D59D0197BC11400C53907 /* IKIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D59CF197BC11400C53907 /* IKIDetailViewController.swift */; };
 		69518ED4B93440F89C4E63AA /* libPods-M.A.C..a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8ED48EF53064F89A38C49BE /* libPods-M.A.C..a */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D26FE2519B4C0FD0039D7D4 /* NetworkUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtility.h; sourceTree = "<group>"; };
+		4D26FE2619B4C0FD0039D7D4 /* NetworkUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtility.m; sourceTree = "<group>"; };
 		6947D817198104F600640A15 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		694D59CF197BC11400C53907 /* IKIDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIDetailViewController.swift; sourceTree = "<group>"; };
 		694D59D2197BD4E300C53907 /* M.A.C.-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "M.A.C.-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 		69E3E478198137F200C8BAA8 /* OBJ-C CODE */ = {
 			isa = PBXGroup;
 			children = (
+				4D26FE2519B4C0FD0039D7D4 /* NetworkUtility.h */,
+				4D26FE2619B4C0FD0039D7D4 /* NetworkUtility.m */,
 				699D060619829AF200993203 /* NSString+IPValidation.h */,
 				699D060719829AF200993203 /* NSString+IPValidation.m */,
 				699D060F19829BC800993203 /* SimplePing.h */,
@@ -364,6 +369,7 @@
 				699D061319829BC800993203 /* SimplePing.m in Sources */,
 				694D59D0197BC11400C53907 /* IKIDetailViewController.swift in Sources */,
 				696F1F51197E7B1000906434 /* IKIScannerViewController.swift in Sources */,
+				4D26FE2719B4C0FD0039D7D4 /* NetworkUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
