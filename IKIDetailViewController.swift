@@ -58,7 +58,7 @@ class IKIDetailViewController:  UIViewController,
     
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -78,16 +78,12 @@ class IKIDetailViewController:  UIViewController,
     */
     
     // MARK: - UIPickerView
-    func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
-        
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 6
-        
     }
     
-    func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int {
-
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.macAddressSpinnerData.count
-    
     }
     
     func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String! {
@@ -112,6 +108,7 @@ class IKIDetailViewController:  UIViewController,
     func selectedSegmentDidChange(segmentedControl: UISegmentedControl) {
         
         NSLog("The selected segment changed for: \(segmentedControl).")
+        
         //Clear all input views for textField
         self.textField.inputView = nil
         self.textField.resignFirstResponder()
@@ -123,19 +120,9 @@ class IKIDetailViewController:  UIViewController,
             
             if !isCamera {
                 
-                let alert = UIAlertController(title: "WARNING", message: "No available camera", preferredStyle: .Alert)
-                let actionOK = UIAlertAction(title: "OK", style: .Default, handler: {
-                    
-                    (action: UIAlertAction!) -> Void in
-                    
-                    alert .dismissViewControllerAnimated(true, completion: nil)
-                    
-                    })
-                
-                alert.addAction(actionOK)
-                
-                self.presentViewController(alert, animated: true, completion: nil)
-                
+                alertView("WARNING", message: "NO AVAILABLE CAMERA")
+                segmentedControlInputTypes.selectedSegmentIndex = 0
+            
             } else {
                 
                 performSegueWithIdentifier("BarcodeScannerSegue", sender: segmentedControl)
@@ -272,7 +259,12 @@ class IKIDetailViewController:  UIViewController,
         
         if let macAddressItem = macAddress {
             
-            self .alertView("MAC ADDRESS RECIEVED", message: macAddressItem)
+            self.buttonLookUp.setTitle("LOOK UP MAC ADDRESS", forState: UIControlState.Normal)
+            segmentedControlInputTypes.selectedSegmentIndex = 0
+            
+            self.textField.text = macAddressItem
+            alertView("MAC ADDRESS RECIEVED", message: macAddressItem)
+            
         }
 
     

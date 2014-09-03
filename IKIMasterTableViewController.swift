@@ -65,36 +65,35 @@ class IKIMasterTableViewController: UITableViewController {
     
     // #pragma mark - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return MACAddressStore.sharedStore.allItems.count
     }
 
-    
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell? {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("devicesCell", forIndexPath: indexPath) as UITableViewCell
-
+        
         // Load saved MACAddressItem's into cell's
         var macAddressItem = MACAddressStore.sharedStore.allItems[indexPath.row]
         
         // Configure the cell...
-        cell.textLabel.text = macAddressItem.company
-        cell.detailTextLabel.text = Utility.sharedStore.dateToString(macAddressItem.dateCreated)
+        cell.textLabel?.text = macAddressItem.company
+        cell.detailTextLabel?.text = Utility.sharedStore.dateToString(macAddressItem.dateCreated)
         
         return cell
     }
-
+    
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             
             // Delete the row from the data source
