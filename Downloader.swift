@@ -16,7 +16,7 @@ class Downloader {
     
     init (url: String) {
     
-        self.URL = NSURL.URLWithString(url)
+        self.URL = NSURL(string: url)!
     }
     
     func downloadJSON(completionHandler: (Array<AnyObject>?) -> ()) {

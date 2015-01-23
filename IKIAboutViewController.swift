@@ -21,7 +21,7 @@ class IKIAboutViewController: UIViewController, UIWebViewDelegate {
         // Do any additional setup after loading the view.
         self.title = "About"
         var url = NSURL(string: authorLinkedinURL)
-        var request = NSURLRequest(URL: url)
+        var request = NSURLRequest(URL: url!)
         
         
         webView.delegate = self
