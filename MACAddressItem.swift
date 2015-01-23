@@ -24,7 +24,7 @@ class MACAddressItem: NSObject , NSCoding {
     
         self.macAddress = macAddress
         self.company = "unknown"
-        self.dateCreated = NSDate.date()
+        self.dateCreated = NSDate()
         
         /*
             In Apple's "Intermediate Swift" video (you can find it in Apple Developer video 
@@ -40,7 +40,7 @@ class MACAddressItem: NSObject , NSCoding {
     }
     
     
-    func description_iki() -> String {
+    func description() -> String {
     
         var stringDescription: String = "I'am MAC:\(self.macAddress), created at:\(self.dateCreated)"
         
