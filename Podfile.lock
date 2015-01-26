@@ -1,13 +1,10 @@
 PODS:
-  - Reachability (3.1.1)
-  - TestFlightSDK (3.0.2)
+  - Reachability (3.2)
 
 DEPENDENCIES:
-  - Reachability (~> 3.1.1)
-  - TestFlightSDK (~> 3.0.2)
+  - Reachability (~> 3.2)
 
 SPEC CHECKSUMS:
-  Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
-  TestFlightSDK: 0c24c533748d0d84bfe7a3cb6036fa79124d84ee
+  Reachability: 1ef8adf5c4e3d362f96515d4278f68dad3c26930
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.35.0
