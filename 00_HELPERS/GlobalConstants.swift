@@ -6,5 +6,5 @@
 //  Copyright (c) 2014 Iki. All rights reserved.
 //
 
-// # pragma - mark URLs
+// MARK: URLs
 let macAddressResolverURL = "http://www.macvendorlookup.com/api/v2/"
