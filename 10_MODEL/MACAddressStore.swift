@@ -18,12 +18,11 @@ class MACAddressStore: NSObject {
         return Singleton.instance
     }
     
-    
     var _privateItems = [MACAddressItem]()
     var allItems: [MACAddressItem] {
         return _privateItems
     }
-    
+
     // MARK: Lifecycle
     override init() {
         super.init()
@@ -33,17 +32,20 @@ class MACAddressStore: NSObject {
         }
     }
 
-
     // MARK: Public Interface
-    func createItem(macAddress: String!) -> MACAddressItem? {
-        let item = MACAddressItem(macAddress: macAddress)
-        if let macAddressItem = item {
-            _privateItems.append(macAddressItem)
-            return macAddressItem
+    func createItem(macAddress: String!, completionHandler:(macAddressItem: MACAddressItem?) -> ()) {
+        Downloader.downloadJSON(macAddress) {
+            (parsedJSON) in
+            let item = MACAddressItem(macAddress: macAddress)
+            item?.company = parsedJSON["company"].stringValue
+            item?.address1 = parsedJSON["addressL1"].stringValue
+            item?.address2 = parsedJSON["addressL2"].stringValue
+            item?.country = parsedJSON["country"].stringValue
+            self._privateItems.append(item!)
+            completionHandler(macAddressItem: item)
         }
-        return nil
     }
-    
+
     func removeItem(macAddressItem: MACAddressItem!) {
         for (index, element) in enumerate(_privateItems) {
             if element === macAddressItem {

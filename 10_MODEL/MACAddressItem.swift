@@ -13,12 +13,11 @@ class MACAddressItem: NSObject , NSCoding {
     // MARK: Properties
     let macAddress: String!
     let dateCreated: NSDate!
-    let company: String?
-    let department: String?
-    let address1: String?
-    let address2: String?
-    let country: String?
-    let locationOfDevice: String?
+    var company: String?
+    var address1: String?
+    var address2: String?
+    var country: String?
+    var locationOfDevice: String?
 
     // MARK: Lifecycle
     init?(macAddress: String) {
@@ -41,7 +40,6 @@ class MACAddressItem: NSObject , NSCoding {
     required init(coder aDecoder: NSCoder) {
         self.macAddress = aDecoder.decodeObjectForKey("macAddress") as String
         self.company = aDecoder.decodeObjectForKey("company") as? String
-        self.department = aDecoder.decodeObjectForKey("department") as? String
         self.address1 = aDecoder.decodeObjectForKey("address1") as? String
         self.address2 = aDecoder.decodeObjectForKey("address2") as? String
         self.country = aDecoder.decodeObjectForKey("country") as? String
@@ -52,7 +50,6 @@ class MACAddressItem: NSObject , NSCoding {
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(macAddress, forKey: "macAddress")
         aCoder.encodeObject(company!, forKey: "company")
-        aCoder.encodeObject(department!, forKey: "department")
         aCoder.encodeObject(address1!, forKey: "address1")
         aCoder.encodeObject(address2!, forKey: "address2")
         aCoder.encodeObject(country!, forKey: "country")

@@ -25,25 +25,25 @@ class IKIMasterTableViewController: UITableViewController {
     // MARK - Insert new object
     func insertNewObject(barButtonItem: UIBarButtonItem) {
     
-        // Create a new MACAddress device
-        var newItem = MACAddressStore.sharedStore.createItem("00:00:00:00:00:00")
-        
-        // Figure out where that device is in the arrat
-        var itemIndex: NSInteger?
-        for (index, element) in enumerate(MACAddressStore.sharedStore.allItems) {
-        
-            if element === newItem {
-            
-                itemIndex = index
-            }
-        }
-        
-        // Construct the index path
-        var indexPath = NSIndexPath(forItem: itemIndex!, inSection: 0)
-        
-        // Insert the new device at the bottom of the list
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Automatic)
-        
+//        // Create a new MACAddress device
+//        var newItem = MACAddressStore.sharedStore.createItem("00:00:00:00:00:00")
+//        
+//        // Figure out where that device is in the arrat
+//        var itemIndex: NSInteger?
+//        for (index, element) in enumerate(MACAddressStore.sharedStore.allItems) {
+//        
+//            if element === newItem {
+//            
+//                itemIndex = index
+//            }
+//        }
+//        
+//        // Construct the index path
+//        var indexPath = NSIndexPath(forItem: itemIndex!, inSection: 0)
+//        
+//        // Insert the new device at the bottom of the list
+//        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Automatic)
+
     }
     
     
