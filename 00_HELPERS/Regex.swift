@@ -10,7 +10,7 @@ import Foundation
 
 let kValidMACAddressRegex = "^([[:xdigit:]]{2}(:|-|\\.)?){5}[[:xdigit:]]{2}$"
 
-public class Regex {
+private class Regex {
     let pattern: String
 
     init (_ pattern: String) {
