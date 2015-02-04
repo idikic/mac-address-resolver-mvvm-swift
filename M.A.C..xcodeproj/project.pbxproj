@@ -15,8 +15,6 @@
 		69518ED4B93440F89C4E63AA /* libPods-M.A.C..a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8ED48EF53064F89A38C49BE /* libPods-M.A.C..a */; };
 		696F1F51197E7B1000906434 /* IKIScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F1F50197E7B1000906434 /* IKIScannerViewController.swift */; };
 		69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69765F3F1977B8B600060E8A /* MACAddressStore.swift */; };
-		697AABF1197947BB0071F68D /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697AABF0197947BB0071F68D /* Utility.swift */; };
-		699D0605198295D100993203 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699D0604198295D100993203 /* GlobalConstants.swift */; };
 		699D060819829AF200993203 /* NSString+IPValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D060719829AF200993203 /* NSString+IPValidation.m */; };
 		699D061319829BC800993203 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D061019829BC800993203 /* SimplePing.m */; };
 		699D061419829BC800993203 /* SimplePingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D061219829BC800993203 /* SimplePingHelper.m */; };
@@ -49,8 +47,6 @@
 		694D59D2197BD4E300C53907 /* M.A.C.-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "M.A.C.-Bridging-Header.h"; path = "00_HELPERS/M.A.C.-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		696F1F50197E7B1000906434 /* IKIScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIScannerViewController.swift; sourceTree = "<group>"; };
 		69765F3F1977B8B600060E8A /* MACAddressStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressStore.swift; sourceTree = "<group>"; };
-		697AABF0197947BB0071F68D /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		699D0604198295D100993203 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		699D060619829AF200993203 /* NSString+IPValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IPValidation.h"; sourceTree = "<group>"; };
 		699D060719829AF200993203 /* NSString+IPValidation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IPValidation.m"; sourceTree = "<group>"; };
 		699D060919829B0300993203 /* if_arp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = if_arp.h; path = Apple.Networking/if_arp.h; sourceTree = "<group>"; };
@@ -136,10 +132,8 @@
 				69E3E478198137F200C8BAA8 /* OBJ-C CODE */,
 				694D59D1197BD3A800C53907 /* HEADERS */,
 				694D59D2197BD4E300C53907 /* M.A.C.-Bridging-Header.h */,
-				697AABF0197947BB0071F68D /* Utility.swift */,
 				6947D817198104F600640A15 /* Downloader.swift */,
 				69BDA25A1982684800E38FBB /* StringExtensions.swift */,
-				699D0604198295D100993203 /* GlobalConstants.swift */,
 			);
 			name = HELPERS;
 			path = 00_HELPERS;
@@ -387,9 +381,7 @@
 				69BDA25B1982684800E38FBB /* StringExtensions.swift in Sources */,
 				69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */,
 				699D060819829AF200993203 /* NSString+IPValidation.m in Sources */,
-				699D0605198295D100993203 /* GlobalConstants.swift in Sources */,
 				699D061419829BC800993203 /* SimplePingHelper.m in Sources */,
-				697AABF1197947BB0071F68D /* Utility.swift in Sources */,
 				69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */,
 				699D061319829BC800993203 /* SimplePing.m in Sources */,
 				4D31922519B755D6009612B0 /* IKIAboutViewController.swift in Sources */,

@@ -152,18 +152,18 @@ class IKIDetailViewController:  UIViewController,
             if validateMACAddress(self.textField.text) {
                 
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-                let downloader = Downloader(url: macAddressResolverURL + self.textField.text)
-                downloader.downloadJSON() {
-                    
-                    (let arrayOfDictionaryObjects) in
-                    
-                    
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    println(arrayOfDictionaryObjects)
-                    
-                    self.textViewResults.text = "\(arrayOfDictionaryObjects)"
-                }
-                
+//                let downloader = Downloader(url: macAddressResolverURL + self.textField.text)
+//                downloader.downloadJSON() {
+//                    
+//                    (let arrayOfDictionaryObjects) in
+//                    
+//                    
+//                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+//                    println(arrayOfDictionaryObjects)
+//                    
+//                    self.textViewResults.text = "\(arrayOfDictionaryObjects)"
+//                }
+
                 
             } else {
                 

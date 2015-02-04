@@ -66,7 +66,7 @@ class IKIMasterTableViewController: UITableViewController {
         
         // Configure the cell...
         cell.textLabel?.text = macAddressItem.company
-        cell.detailTextLabel?.text = Utility.sharedStore.dateToString(macAddressItem.dateCreated)
+        //cell.detailTextLabel?.text = Utility.sharedStore.dateToString(macAddressItem.dateCreated)
         
         return cell
     }
