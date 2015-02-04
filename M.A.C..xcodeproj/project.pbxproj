@@ -12,6 +12,7 @@
 		4D26FE2719B4C0FD0039D7D4 /* NetworkUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26FE2619B4C0FD0039D7D4 /* NetworkUtility.m */; };
 		4D2B165E1A823A8900487367 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B165D1A823A8900487367 /* Regex.swift */; };
 		4D2B165F1A823A8900487367 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B165D1A823A8900487367 /* Regex.swift */; };
+		4D2B16601A82405B00487367 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6947D817198104F600640A15 /* Downloader.swift */; };
 		4D31922519B755D6009612B0 /* IKIAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31922419B755D6009612B0 /* IKIAboutViewController.swift */; };
 		6947D818198104F600640A15 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6947D817198104F600640A15 /* Downloader.swift */; };
 		694D59D0197BC11400C53907 /* IKIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D59CF197BC11400C53907 /* IKIDetailViewController.swift */; };
@@ -418,6 +419,7 @@
 			files = (
 				69D4D62F1976B80900907FA7 /* M_A_C_Tests.swift in Sources */,
 				4D2B165F1A823A8900487367 /* Regex.swift in Sources */,
+				4D2B16601A82405B00487367 /* Downloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

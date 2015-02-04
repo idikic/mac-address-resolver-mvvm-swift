@@ -43,5 +43,4 @@ class M_A_C_Tests: XCTestCase {
         XCTAssert("0000.0000.0000" =~ kValidMACAddressRegex, "INVALID mac address")
         XCTAssert("AA00.CC00.DD00" =~ kValidMACAddressRegex, "INVALID mac address")
     }
-
 }
