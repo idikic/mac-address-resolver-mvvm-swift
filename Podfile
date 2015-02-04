@@ -3,7 +3,8 @@ platform :ios, "8.0"
 
 target "M.A.C." do
 
-    pod 'Reachability', '~> 3.2'
+    pod 'Reachability'
+    pod 'SwiftyJSON'
 
 end
 
