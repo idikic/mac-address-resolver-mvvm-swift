@@ -9,12 +9,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "11_VIEW/IKIDetailViewController.swift"
-            timestampString = "431362600.07059"
+            filePath = "11_VIEW/MACAddressDetailViewController.swift"
+            timestampString = "445085094.204193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
             landmarkName = "selectedSegmentDidChange(_:)"
             landmarkType = "5">
          </BreakpointContent>

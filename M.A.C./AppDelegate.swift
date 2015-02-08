@@ -16,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
+
+        // TAB 0
+        let macAddressListViewViewModel = MACAddressListViewViewModel(macAddressStore: MACAddressStore())
+        let tabBarController = self.window?.rootViewController as UITabBarController
+        if let macAddressListTableViewController = tabBarController.viewControllers?[0].topViewController {
+            (macAddressListTableViewController as MACAddressListTableViewController).viewModel = macAddressListViewViewModel
+        }
+
+        // TAB 1
+
+        // TAB 2
         return true
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Ua-Il-03S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Ua-Il-03S">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -28,7 +28,7 @@
         <!--Devices-->
         <scene sceneID="CxS-G1-gy4">
             <objects>
-                <tableViewController id="QLP-w8-ZKP" customClass="IKIMasterTableViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="QLP-w8-ZKP" customClass="MACAddressListTableViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hZn-Fz-9yA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Devices" id="ne1-YC-6DM">
                         <barButtonItem key="leftBarButtonItem" title="Item" systemItem="edit" id="18L-BN-a98"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Vid-UE-8Fi"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Vid-UE-8Fi">
+                            <connections>
+                                <segue destination="mjN-uh-HRK" kind="presentation" id="sh2-3Z-HvE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ol-aW-Rqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -75,7 +79,7 @@
         <!--MAC ADDRESS LOOKUP-->
         <scene sceneID="49p-p9-TKm">
             <objects>
-                <viewController id="Yec-kt-yz8" customClass="IKIDetailViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Yec-kt-yz8" customClass="MACAddressDetailViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N8N-Bg-KuD"/>
                         <viewControllerLayoutGuide type="bottom" id="hE1-rM-2GU"/>
@@ -526,4 +530,7 @@
         <image name="Search" width="28" height="28"/>
         <image name="Settings" width="28" height="28"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kHQ-WR-6JN"/>
+    </inferredMetricsTieBreakers>
 </document>

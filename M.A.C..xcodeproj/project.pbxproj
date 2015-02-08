@@ -9,20 +9,22 @@
 /* Begin PBXBuildFile section */
 		0A7EDADD3D4BA980C51806DE /* Pods_M_A_C_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 685C472B380845DE3C043D84 /* Pods_M_A_C_.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4D15B5B81A76C607000C0724 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D15B5B71A76C607000C0724 /* Main.storyboard */; };
+		4D16C94D1A875BDF00A89738 /* MACAddressListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D16C94C1A875BDF00A89738 /* MACAddressListViewModel.swift */; };
+		4D16C94F1A87668700A89738 /* MACAddressListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D16C94E1A87668700A89738 /* MACAddressListViewViewModel.swift */; };
 		4D26FE2719B4C0FD0039D7D4 /* NetworkUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D26FE2619B4C0FD0039D7D4 /* NetworkUtility.m */; };
 		4D2B165E1A823A8900487367 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B165D1A823A8900487367 /* Regex.swift */; };
 		4D2B165F1A823A8900487367 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B165D1A823A8900487367 /* Regex.swift */; };
 		4D2B16601A82405B00487367 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6947D817198104F600640A15 /* Downloader.swift */; };
 		4D31922519B755D6009612B0 /* IKIAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31922419B755D6009612B0 /* IKIAboutViewController.swift */; };
 		6947D818198104F600640A15 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6947D817198104F600640A15 /* Downloader.swift */; };
-		694D59D0197BC11400C53907 /* IKIDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D59CF197BC11400C53907 /* IKIDetailViewController.swift */; };
+		694D59D0197BC11400C53907 /* MACAddressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D59CF197BC11400C53907 /* MACAddressDetailViewController.swift */; };
 		696F1F51197E7B1000906434 /* IKIScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F1F50197E7B1000906434 /* IKIScannerViewController.swift */; };
 		69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69765F3F1977B8B600060E8A /* MACAddressStore.swift */; };
 		699D060819829AF200993203 /* NSString+IPValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D060719829AF200993203 /* NSString+IPValidation.m */; };
 		699D061319829BC800993203 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D061019829BC800993203 /* SimplePing.m */; };
 		699D061419829BC800993203 /* SimplePingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D061219829BC800993203 /* SimplePingHelper.m */; };
 		69BDA25B1982684800E38FBB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BDA25A1982684800E38FBB /* StringExtensions.swift */; };
-		69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */; };
+		69BEF1141976C1EC0063DF1A /* MACAddressListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1131976C1EC0063DF1A /* MACAddressListTableViewController.swift */; };
 		69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1161976C3C80063DF1A /* MACAddressItem.swift */; };
 		69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D4D61B1976B80900907FA7 /* AppDelegate.swift */; };
 		69D4D6231976B80900907FA7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69D4D6221976B80900907FA7 /* Images.xcassets */; };
@@ -42,13 +44,15 @@
 /* Begin PBXFileReference section */
 		30C6360E7F5AA5412F4AAFCB /* Pods-M.A.C..release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M.A.C..release.xcconfig"; path = "Pods/Target Support Files/Pods-M.A.C./Pods-M.A.C..release.xcconfig"; sourceTree = "<group>"; };
 		4D15B5B71A76C607000C0724 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4D16C94C1A875BDF00A89738 /* MACAddressListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressListViewModel.swift; sourceTree = "<group>"; };
+		4D16C94E1A87668700A89738 /* MACAddressListViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressListViewViewModel.swift; sourceTree = "<group>"; };
 		4D26FE2519B4C0FD0039D7D4 /* NetworkUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUtility.h; sourceTree = "<group>"; };
 		4D26FE2619B4C0FD0039D7D4 /* NetworkUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtility.m; sourceTree = "<group>"; };
 		4D2B165D1A823A8900487367 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		4D31922419B755D6009612B0 /* IKIAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIAboutViewController.swift; sourceTree = "<group>"; };
 		685C472B380845DE3C043D84 /* Pods_M_A_C_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_A_C_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6947D817198104F600640A15 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
-		694D59CF197BC11400C53907 /* IKIDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIDetailViewController.swift; sourceTree = "<group>"; };
+		694D59CF197BC11400C53907 /* MACAddressDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressDetailViewController.swift; sourceTree = "<group>"; };
 		694D59D2197BD4E300C53907 /* M.A.C.-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "M.A.C.-Bridging-Header.h"; path = "00_HELPERS/M.A.C.-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		696F1F50197E7B1000906434 /* IKIScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIScannerViewController.swift; sourceTree = "<group>"; };
 		69765F3F1977B8B600060E8A /* MACAddressStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressStore.swift; sourceTree = "<group>"; };
@@ -65,7 +69,7 @@
 		699D061119829BC800993203 /* SimplePingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePingHelper.h; sourceTree = "<group>"; };
 		699D061219829BC800993203 /* SimplePingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePingHelper.m; sourceTree = "<group>"; };
 		69BDA25A1982684800E38FBB /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IKIMasterTableViewController.swift; sourceTree = "<group>"; };
+		69BEF1131976C1EC0063DF1A /* MACAddressListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressListTableViewController.swift; sourceTree = "<group>"; };
 		69BEF1161976C3C80063DF1A /* MACAddressItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressItem.swift; sourceTree = "<group>"; };
 		69D4D6161976B80900907FA7 /* M.A.C..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M.A.C..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D4D61A1976B80900907FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				4D15B5B71A76C607000C0724 /* Main.storyboard */,
-				69BEF1131976C1EC0063DF1A /* IKIMasterTableViewController.swift */,
-				694D59CF197BC11400C53907 /* IKIDetailViewController.swift */,
+				69BEF1131976C1EC0063DF1A /* MACAddressListTableViewController.swift */,
+				694D59CF197BC11400C53907 /* MACAddressDetailViewController.swift */,
 				696F1F50197E7B1000906434 /* IKIScannerViewController.swift */,
 				4D31922419B755D6009612B0 /* IKIAboutViewController.swift */,
 			);
@@ -147,8 +151,11 @@
 		69BEF1121976C1720063DF1A /* VIEW MODEL */ = {
 			isa = PBXGroup;
 			children = (
+				4D16C94C1A875BDF00A89738 /* MACAddressListViewModel.swift */,
+				4D16C94E1A87668700A89738 /* MACAddressListViewViewModel.swift */,
 			);
 			name = "VIEW MODEL";
+			path = 12_VIEW_MODEL;
 			sourceTree = "<group>";
 		};
 		69BEF1151976C39C0063DF1A /* MODEL */ = {
@@ -398,16 +405,18 @@
 			files = (
 				69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */,
 				69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */,
+				4D16C94F1A87668700A89738 /* MACAddressListViewViewModel.swift in Sources */,
 				6947D818198104F600640A15 /* Downloader.swift in Sources */,
+				4D16C94D1A875BDF00A89738 /* MACAddressListViewModel.swift in Sources */,
 				4D2B165E1A823A8900487367 /* Regex.swift in Sources */,
 				69BDA25B1982684800E38FBB /* StringExtensions.swift in Sources */,
-				69BEF1141976C1EC0063DF1A /* IKIMasterTableViewController.swift in Sources */,
+				69BEF1141976C1EC0063DF1A /* MACAddressListTableViewController.swift in Sources */,
 				699D060819829AF200993203 /* NSString+IPValidation.m in Sources */,
 				699D061419829BC800993203 /* SimplePingHelper.m in Sources */,
 				69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */,
 				699D061319829BC800993203 /* SimplePing.m in Sources */,
 				4D31922519B755D6009612B0 /* IKIAboutViewController.swift in Sources */,
-				694D59D0197BC11400C53907 /* IKIDetailViewController.swift in Sources */,
+				694D59D0197BC11400C53907 /* MACAddressDetailViewController.swift in Sources */,
 				696F1F51197E7B1000906434 /* IKIScannerViewController.swift in Sources */,
 				4D26FE2719B4C0FD0039D7D4 /* NetworkUtility.m in Sources */,
 			);
@@ -549,6 +558,7 @@
 		};
 		69D4D6361976B80900907FA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D873637237D3CB6CEB215C05 /* Pods-M.A.C..debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/M.A.C..app/M.A.C.";
 				FRAMEWORK_SEARCH_PATHS = (

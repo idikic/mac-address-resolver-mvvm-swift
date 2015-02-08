@@ -1,18 +1,19 @@
 //
-//  IKIDetailViewController.swift
+//  MACAddressDetailViewController.swift
 //  M.A.C.
 //
-//  Created by iki on 20/07/14.
-//  Copyright (c) 2014 Iki. All rights reserved.
+//  Created by iki on 08/02/15.
+//  Copyright (c) 2015 Iki. All rights reserved.
 //
 
 import UIKit
 import AVFoundation
 
-class IKIDetailViewController:  UIViewController,
-                                AVCaptureMetadataOutputObjectsDelegate,
-                                ScannerViewDelegate,
-                                UIPickerViewDelegate, UIPickerViewDataSource
+class MACAddressDetailViewController: UIViewController,
+                                      AVCaptureMetadataOutputObjectsDelegate,
+                                      ScannerViewDelegate,
+                                      UIPickerViewDelegate,
+                                      UIPickerViewDataSource
     
 {
     
@@ -21,12 +22,9 @@ class IKIDetailViewController:  UIViewController,
     
     let macAddressSpinnerData = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"]
     lazy var macAddressSpinner: UIPickerView = {
-        
         var tempMacAddressSpinner = UIPickerView()
-        
         tempMacAddressSpinner.delegate = self
         tempMacAddressSpinner.showsSelectionIndicator = true
-    
         return tempMacAddressSpinner
     }()
     
