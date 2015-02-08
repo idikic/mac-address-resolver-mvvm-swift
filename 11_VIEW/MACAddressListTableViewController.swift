@@ -15,6 +15,8 @@ class MACAddressListTableViewController: UITableViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = self.editButtonItem();
+        title = viewModel?.title
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -39,27 +41,14 @@ class MACAddressListTableViewController: UITableViewController {
     }
     
     
-    // Override to support editing the table view.
+    // MARK: Edit table view
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            
-            // Delete the row from the data source
-            var macAddressItems = MACAddressStore.sharedStore.allItems
-            
-            // Figure out where that device is in the arrat
-            for (index, element) in enumerate(MACAddressStore.sharedStore.allItems) {
-                
-                if index == indexPath.row {
-                    
-                    //Remove item from MACAddressStore
-                    MACAddressStore.sharedStore.removeItem(element)
-                }
-            }
-            
+
             var indexPathToRemove = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section)
+            viewModel?.macAddressDeleteAtRow(indexPathToRemove.row, inSection: indexPathToRemove.section)
             tableView.deleteRowsAtIndexPaths([indexPathToRemove], withRowAnimation: .Fade)
-            
-           
+
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    

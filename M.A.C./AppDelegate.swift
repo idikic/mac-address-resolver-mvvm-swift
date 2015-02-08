@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         // TAB 0
-        let macAddressListViewViewModel = MACAddressListViewViewModel(macAddressStore: MACAddressStore())
+        MACAddressStore.sharedStore.loadMockData()
+        let macAddressListViewViewModel = MACAddressListViewViewModel(macAddressStore: MACAddressStore.sharedStore)
         let tabBarController = self.window?.rootViewController as UITabBarController
         if let macAddressListTableViewController = tabBarController.viewControllers?[0].topViewController {
             (macAddressListTableViewController as MACAddressListTableViewController).viewModel = macAddressListViewViewModel

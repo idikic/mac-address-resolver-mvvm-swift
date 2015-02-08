@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IKIAboutViewController: UIViewController, UIWebViewDelegate {
+class AboutViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!

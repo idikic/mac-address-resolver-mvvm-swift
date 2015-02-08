@@ -24,7 +24,7 @@ class MACAddressStore: NSObject {
     }
 
     // MARK: Lifecycle
-    override init() {
+    private override init() {
         super.init()
         let unarchivedItems : AnyObject! = NSKeyedUnarchiver.unarchiveObjectWithFile(itemArchivedPath)
         if unarchivedItems != nil {
@@ -54,6 +54,10 @@ class MACAddressStore: NSObject {
         }
     }
 
+    func removeItemAt(index: Int) {
+        _privateItems.removeAtIndex(index)
+    }
+
     func saveChanges() -> Bool {
         let path = itemArchivedPath
         return NSKeyedArchiver.archiveRootObject(_privateItems, toFile: path)
@@ -69,5 +73,19 @@ class MACAddressStore: NSObject {
             return documentDirectory.stringByAppendingPathComponent("items.archive")
         }
     }
+
+    // mock data
+    func loadMockData() {
+        var macAddressItem = MACAddressItem(macAddress: "00:11:00:22:33:44:00 - TEST")
+        _privateItems.append(macAddressItem!)
+        _privateItems.append(macAddressItem!)
+        _privateItems.append(macAddressItem!)
+        _privateItems.append(macAddressItem!)
+        _privateItems.append(macAddressItem!)
+        _privateItems.append(macAddressItem!)
+        _privateItems.append(macAddressItem!)
+    }
+
+
 
 }

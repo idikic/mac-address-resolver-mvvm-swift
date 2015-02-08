@@ -10,10 +10,12 @@ import Foundation
 
 protocol MACAddressListViewModel {
 
+    var title: String { get }
     func numberOfSections() -> Int
     func numberOfItemsInSection() -> Int
     func macAddressAtRow(row: Int, inSection: Int) -> String
     func macAddressCreatedAtRow(row: Int, inSection: Int) -> String
+    func macAddressDeleteAtRow(row: Int, inSection: Int)
 
     init(macAddressStore: MACAddressStore)
 }

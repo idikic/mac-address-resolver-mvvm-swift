@@ -39,41 +39,16 @@ class MACAddressDetailViewController: UIViewController,
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         configureDefaultSegmentedControl()
         self.textField.inputView = self.macAddressSpinner
-        
-        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    
     // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
         // SETUP SCANNER VIEW CONTROLLER
-        var scannerViewController = segue.destinationViewController as IKIScannerViewController
+        var scannerViewController = segue.destinationViewController as MACScannerViewController
         scannerViewController.delegate = self
-        
-        
     }
-    
-    /*
-    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
-        
-
-    }
-    */
     
     // MARK: - UIPickerView
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {

@@ -54,7 +54,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="mjN-uh-HRK" kind="presentation" id="kHQ-WR-6JN"/>
+                                    <segue destination="mjN-uh-HRK" kind="show" id="kHQ-WR-6JN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -168,7 +168,7 @@
         <!--BARCODE SCANNER-->
         <scene sceneID="m8m-06-KxW">
             <objects>
-                <viewController title="BARCODE SCANNER" id="QmS-dX-ZNv" customClass="IKIScannerViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BARCODE SCANNER" id="QmS-dX-ZNv" customClass="MACScannerViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ptV-4V-ZYO"/>
                         <viewControllerLayoutGuide type="bottom" id="hkY-Ny-NeC"/>
@@ -431,7 +431,7 @@
         <!--About View Controller-->
         <scene sceneID="XKt-SQ-pVr">
             <objects>
-                <viewController id="3aU-1X-OwL" customClass="IKIAboutViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3aU-1X-OwL" customClass="AboutViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7WN-pk-5Xa"/>
                         <viewControllerLayoutGuide type="bottom" id="Ffs-Hm-VAW"/>

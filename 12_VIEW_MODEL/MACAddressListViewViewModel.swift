@@ -10,12 +10,12 @@ import Foundation
 
 class MACAddressListViewViewModel : MACAddressListViewModel {
 
+    let title: String
     let macAddressStore: MACAddressStore!
-    var macAddressItems: [MACAddressItem]
 
     required init(macAddressStore: MACAddressStore) {
         self.macAddressStore = macAddressStore
-        self.macAddressItems = self.macAddressStore.allItems
+        self.title = "Devices"
     }
 
     func numberOfSections() -> Int {
@@ -23,14 +23,18 @@ class MACAddressListViewViewModel : MACAddressListViewModel {
     }
 
     func numberOfItemsInSection() -> Int {
-        return macAddressItems.count
+        return macAddressStore.allItems.count
     }
 
     func macAddressAtRow(row: Int, inSection: Int) -> String {
-        return macAddressItems[row].macAddress
+        return macAddressStore.allItems[row].macAddress
     }
 
     func macAddressCreatedAtRow(row: Int, inSection: Int) -> String {
-        return ("\(macAddressItems[row].dateCreated)")
+        return ("\(macAddressStore.allItems[row].dateCreated)")
+    }
+
+    func macAddressDeleteAtRow(row: Int, inSection: Int) {
+        macAddressStore.removeItemAt(row)
     }
 }
