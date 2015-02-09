@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "11_VIEW/MACAddressDetailViewController.swift"
-            timestampString = "445099577.725479"
+            timestampString = "445204611.247541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "selectedSegmentDidChange(_:)"
             landmarkType = "5">
          </BreakpointContent>

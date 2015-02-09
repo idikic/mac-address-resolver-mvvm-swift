@@ -50,6 +50,7 @@
 		4D26FE2619B4C0FD0039D7D4 /* NetworkUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkUtility.m; sourceTree = "<group>"; };
 		4D2B165D1A823A8900487367 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		4D31922419B755D6009612B0 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		4DA38A691A89486C00F1F512 /* SimpleBindingMechanism.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = SimpleBindingMechanism.playground; path = M.A.C./SimpleBindingMechanism.playground; sourceTree = "<group>"; };
 		685C472B380845DE3C043D84 /* Pods_M_A_C_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_A_C_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6947D817198104F600640A15 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		694D59CF197BC11400C53907 /* MACAddressDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressDetailViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +172,7 @@
 		69D4D60D1976B80900907FA7 = {
 			isa = PBXGroup;
 			children = (
+				4DA38A691A89486C00F1F512 /* SimpleBindingMechanism.playground */,
 				697AABEF1979479B0071F68D /* HELPERS */,
 				69BEF1151976C39C0063DF1A /* MODEL */,
 				4D15B5B61A76C1E8000C0724 /* VIEW */,

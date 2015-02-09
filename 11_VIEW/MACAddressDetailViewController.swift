@@ -66,16 +66,7 @@ class MACAddressDetailViewController: UIViewController,
     
     // MARK: - Action
     @IBAction func dismissDetailViewController(sender: AnyObject) {
-        
-        self.dismissViewControllerAnimated(true, completion: {
-            
-                () -> Void in
-            
-                println("Detail View Controller Dismissed")
-            
-            
-            })
-        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func selectedSegmentDidChange(segmentedControl: UISegmentedControl) {
