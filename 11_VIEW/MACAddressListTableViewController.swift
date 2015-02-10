@@ -8,6 +8,8 @@
 
 import UIKit
 
+let AddNewMACAddressItemSegueIdentifier = "AddMACAddressItem"
+
 class MACAddressListTableViewController: UITableViewController {
 
     var viewModel: MACAddressListViewViewModel?
@@ -24,7 +26,23 @@ class MACAddressListTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
 
-    // MARK: Table view data source
+    // MARK: Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+        var destinationViewController =
+            segue.destinationViewController.topViewController as MACAddressDetailViewController
+
+        if segue.identifier == AddNewMACAddressItemSegueIdentifier {
+            let viewModel = self.viewModel?.viewModelForMACAddressDetailView()
+            destinationViewController.viewModel = viewModel
+        }
+
+    }
+}
+
+// MARK: UITable View Data Source
+extension MACAddressListTableViewController: UITableViewDataSource {
+
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return viewModel!.numberOfSections()
     }
@@ -39,9 +57,12 @@ class MACAddressListTableViewController: UITableViewController {
         cell.detailTextLabel?.text = viewModel?.macAddressCreatedAtRow(indexPath.row, inSection: indexPath.section)
         return cell
     }
-    
-    
-    // MARK: Edit table view
+
+}
+
+// MARK: UITable View Delegate
+extension MACAddressListTableViewController: UITableViewDelegate {
+
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
 
@@ -53,4 +74,5 @@ class MACAddressListTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
+
 }

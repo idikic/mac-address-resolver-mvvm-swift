@@ -16,6 +16,10 @@
 		4D2B165F1A823A8900487367 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B165D1A823A8900487367 /* Regex.swift */; };
 		4D2B16601A82405B00487367 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6947D817198104F600640A15 /* Downloader.swift */; };
 		4D31922519B755D6009612B0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D31922419B755D6009612B0 /* AboutViewController.swift */; };
+		4DA38A6B1A8A3D6500F1F512 /* MACAddressDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA38A6A1A8A3D6500F1F512 /* MACAddressDetailViewModel.swift */; };
+		4DA38A6D1A8A4C8F00F1F512 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA38A6C1A8A4C8F00F1F512 /* Alerts.swift */; };
+		4DA38A6F1A8A4DCA00F1F512 /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA38A6E1A8A4DCA00F1F512 /* Dynamic.swift */; };
+		4DA38A711A8A512000F1F512 /* MACAddressDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA38A701A8A512000F1F512 /* MACAddressDetailViewViewModel.swift */; };
 		6947D818198104F600640A15 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6947D817198104F600640A15 /* Downloader.swift */; };
 		694D59D0197BC11400C53907 /* MACAddressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D59CF197BC11400C53907 /* MACAddressDetailViewController.swift */; };
 		696F1F51197E7B1000906434 /* MACScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F1F50197E7B1000906434 /* MACScannerViewController.swift */; };
@@ -51,6 +55,10 @@
 		4D2B165D1A823A8900487367 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		4D31922419B755D6009612B0 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4DA38A691A89486C00F1F512 /* SimpleBindingMechanism.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = SimpleBindingMechanism.playground; path = M.A.C./SimpleBindingMechanism.playground; sourceTree = "<group>"; };
+		4DA38A6A1A8A3D6500F1F512 /* MACAddressDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressDetailViewModel.swift; sourceTree = "<group>"; };
+		4DA38A6C1A8A4C8F00F1F512 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		4DA38A6E1A8A4DCA00F1F512 /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		4DA38A701A8A512000F1F512 /* MACAddressDetailViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressDetailViewViewModel.swift; sourceTree = "<group>"; };
 		685C472B380845DE3C043D84 /* Pods_M_A_C_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_A_C_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6947D817198104F600640A15 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		694D59CF197BC11400C53907 /* MACAddressDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressDetailViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +152,8 @@
 				6947D817198104F600640A15 /* Downloader.swift */,
 				69BDA25A1982684800E38FBB /* StringExtensions.swift */,
 				4D2B165D1A823A8900487367 /* Regex.swift */,
+				4DA38A6C1A8A4C8F00F1F512 /* Alerts.swift */,
+				4DA38A6E1A8A4DCA00F1F512 /* Dynamic.swift */,
 			);
 			name = HELPERS;
 			path = 00_HELPERS;
@@ -154,6 +164,8 @@
 			children = (
 				4D16C94C1A875BDF00A89738 /* MACAddressListViewModel.swift */,
 				4D16C94E1A87668700A89738 /* MACAddressListViewViewModel.swift */,
+				4DA38A6A1A8A3D6500F1F512 /* MACAddressDetailViewModel.swift */,
+				4DA38A701A8A512000F1F512 /* MACAddressDetailViewViewModel.swift */,
 			);
 			name = "VIEW MODEL";
 			path = 12_VIEW_MODEL;
@@ -408,18 +420,22 @@
 				69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */,
 				69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */,
 				4D16C94F1A87668700A89738 /* MACAddressListViewViewModel.swift in Sources */,
+				4DA38A711A8A512000F1F512 /* MACAddressDetailViewViewModel.swift in Sources */,
 				6947D818198104F600640A15 /* Downloader.swift in Sources */,
 				4D16C94D1A875BDF00A89738 /* MACAddressListViewModel.swift in Sources */,
 				4D2B165E1A823A8900487367 /* Regex.swift in Sources */,
 				69BDA25B1982684800E38FBB /* StringExtensions.swift in Sources */,
+				4DA38A6B1A8A3D6500F1F512 /* MACAddressDetailViewModel.swift in Sources */,
 				69BEF1141976C1EC0063DF1A /* MACAddressListTableViewController.swift in Sources */,
 				699D060819829AF200993203 /* NSString+IPValidation.m in Sources */,
 				699D061419829BC800993203 /* SimplePingHelper.m in Sources */,
+				4DA38A6F1A8A4DCA00F1F512 /* Dynamic.swift in Sources */,
 				69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */,
 				699D061319829BC800993203 /* SimplePing.m in Sources */,
 				4D31922519B755D6009612B0 /* AboutViewController.swift in Sources */,
 				694D59D0197BC11400C53907 /* MACAddressDetailViewController.swift in Sources */,
 				696F1F51197E7B1000906434 /* MACScannerViewController.swift in Sources */,
+				4DA38A6D1A8A4C8F00F1F512 /* Alerts.swift in Sources */,
 				4D26FE2719B4C0FD0039D7D4 /* NetworkUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

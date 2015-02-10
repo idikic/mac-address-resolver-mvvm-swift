@@ -17,5 +17,7 @@ protocol MACAddressListViewModel {
     func macAddressCreatedAtRow(row: Int, inSection: Int) -> String
     func macAddressDeleteAtRow(row: Int, inSection: Int)
 
+    func viewModelForMACAddressDetailView() -> MACAddressDetailViewViewModel
+
     init(macAddressStore: MACAddressStore)
 }

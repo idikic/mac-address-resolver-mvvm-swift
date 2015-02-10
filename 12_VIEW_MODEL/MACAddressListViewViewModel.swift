@@ -37,4 +37,8 @@ class MACAddressListViewViewModel : MACAddressListViewModel {
     func macAddressDeleteAtRow(row: Int, inSection: Int) {
         macAddressStore.removeItemAt(row)
     }
+
+    func viewModelForMACAddressDetailView() -> MACAddressDetailViewViewModel {
+        return MACAddressDetailViewViewModel(macAddress: nil)
+    }
 }
