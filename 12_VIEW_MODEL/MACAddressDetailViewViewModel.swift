@@ -26,7 +26,6 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
                                           "C", "D", "E", "F"])
         self.textFieldText = Dynamic("")
         self.textFieldPlaceholderText = Dynamic("tap to start")
-        self.textFieldText = Dynamic("")
         self.buttonTitle = Dynamic("LOOK UP")
         self.textViewText = Dynamic("RESULTS")
     }

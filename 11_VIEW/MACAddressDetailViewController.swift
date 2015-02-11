@@ -26,43 +26,40 @@ class MACAddressDetailViewController: UIViewController {
     }()
 
     var viewModel: MACAddressDetailViewViewModel?
-    private var internalViewModel: MACAddressDetailViewViewModel! {
-        didSet {
-            internalViewModel.macAddressItem.bindAndFire {
-                [unowned self] in
-                self.macAddressItem = $0
-            }
-
-            internalViewModel.textFieldText.bindAndFire {
-                [unowned self] in
-                self.textField.text = $0
-            }
-
-            internalViewModel.textFieldPlaceholderText.bindAndFire {
-                [unowned self] in
-                self.textField.placeholder = $0
-            }
-
-            internalViewModel.buttonTitle.bindAndFire {
-                [unowned self] in
-                self.button.setTitle($0, forState: UIControlState.Normal)
-            }
-
-            internalViewModel.textViewText.bindAndFire {
-                [unowned self] in
-                self.textView.text = $0
-            }
-        }
-    }
 
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let unwrappedViewModel = viewModel {
+            bindToViewModel()
+        }
+    }
 
-        if let unwrapedViewModel = viewModel {
-            internalViewModel = unwrapedViewModel
+    private func bindToViewModel() {
+        viewModel!.macAddressItem.bindAndFire {
+            [unowned self] in
+            self.macAddressItem = $0
         }
 
+        viewModel!.textFieldText.bindAndFire {
+            [unowned self] in
+            self.textField.text = $0
+        }
+
+        viewModel!.textFieldPlaceholderText.bindAndFire {
+            [unowned self] in
+            self.textField.placeholder = $0
+        }
+
+        viewModel!.buttonTitle.bindAndFire {
+            [unowned self] in
+            self.button.setTitle($0, forState: UIControlState.Normal)
+        }
+
+        viewModel!.textViewText.bindAndFire {
+            [unowned self] in
+            self.textView.text = $0
+        }
     }
 }
 
