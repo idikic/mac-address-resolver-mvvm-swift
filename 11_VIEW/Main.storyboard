@@ -109,7 +109,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="RESULTS" translatesAutoresizingMaskIntoConstraints="NO" id="eDi-6D-f6q">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="RESULTS" translatesAutoresizingMaskIntoConstraints="NO" id="eDi-6D-f6q">
                                 <rect key="frame" x="20" y="211" width="560" height="369"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -132,7 +132,14 @@
                             <constraint firstItem="pp8-ze-2Wv" firstAttribute="leading" secondItem="XHr-ZD-IpB" secondAttribute="leading" constant="20" id="ymT-Vu-jnZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MAC ADDRESS LOOKUP" id="ZYm-VL-sYb"/>
+                    <navigationItem key="navigationItem" title="MAC ADDRESS LOOKUP" id="ZYm-VL-sYb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Xmy-Am-Ikp">
+                            <connections>
+                                <segue destination="5Ry-uk-cNx" kind="unwind" unwindAction="unwindToMACAddressList:" id="LGi-N5-Sgf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="oRm-Xn-yI9"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="button" destination="3d6-Ym-CgW" id="L1H-Ty-Vty"/>
                         <outlet property="segmentedControl" destination="pp8-ze-2Wv" id="SkU-ef-Np7"/>
@@ -142,6 +149,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVK-zV-rIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5Ry-uk-cNx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2875" y="-183"/>
         </scene>
@@ -163,7 +171,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g3c-or-0BB">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g3c-or-0BB">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="sGJ-VG-6oR"/>

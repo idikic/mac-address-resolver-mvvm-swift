@@ -18,7 +18,10 @@ class MACAddressListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = self.editButtonItem();
-        title = viewModel?.title
+        tableView.tableFooterView = UIView()
+        if let unwrappedViewModel = viewModel {
+            bindToViewModel()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -44,8 +47,9 @@ class MACAddressListTableViewController: UITableViewController {
             let viewModel = self.viewModel?.viewModelForMACAddressDetailView()
             destinationViewController.viewModel = viewModel
         }
-
     }
+
+    @IBAction func unwindToMACAddressList(unwindSegue: UIStoryboardSegue) {}
 }
 
 // MARK: UITable View Data Source
