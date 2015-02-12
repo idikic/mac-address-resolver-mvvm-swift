@@ -35,7 +35,13 @@ class MACAddressDetailViewController: UIViewController {
         }
     }
 
+    // MARK: Binding
     private func bindToViewModel() {
+        viewModel!.viewTitle.bindAndFire {
+            [unowned self] in
+            self.title = $0
+        }
+
         viewModel!.macAddressItem.bindAndFire {
             [unowned self] in
             self.macAddressItem = $0

@@ -10,6 +10,7 @@ import Foundation
 
 protocol MACAddressDetailViewModel {
 
+    var viewTitle: Dynamic<String> { get }
     var macAddressItem: Dynamic<MACAddressItem?> { get }
     var pickerViewData: Dynamic<[String]> { get }
     var textFieldText: Dynamic<String> { get }

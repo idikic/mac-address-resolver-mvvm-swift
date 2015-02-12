@@ -26,6 +26,14 @@ class MACAddressListTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
 
+    // MARK: Binding
+    private func bindToViewModel() {
+        viewModel!.viewTitle.bindAndFire {
+            [unowned self] in
+            self.title = $0
+        }
+    }
+
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 

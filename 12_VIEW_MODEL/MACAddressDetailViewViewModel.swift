@@ -10,6 +10,7 @@ import Foundation
 
 class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
 
+    let viewTitle: Dynamic<String>
     let macAddressItem: Dynamic<MACAddressItem?>
     let pickerViewData: Dynamic<[String]>
     let textFieldText: Dynamic<String>
@@ -18,6 +19,7 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
     let buttonTitle: Dynamic<String>
 
     init(macAddress: MACAddressItem?) {
+        self.viewTitle = Dynamic("New Device")
         self.macAddressItem = Dynamic(nil)
         self.pickerViewData = Dynamic(   ["0", "1", "2",
                                           "3", "4", "5",
