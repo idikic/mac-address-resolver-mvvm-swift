@@ -30,9 +30,13 @@ class MACAddressDetailViewController: UIViewController {
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        assert(viewModel != nil, "VIEW MODEL CAN'T BE NIL")
+
+        // CONFIGURATION
         if let unwrappedViewModel = viewModel {
             bindToViewModel()
         }
+        textField.inputView = pickerView
     }
 
     // MARK: Binding
@@ -72,4 +76,38 @@ class MACAddressDetailViewController: UIViewController {
 // MARK: UIPicker View Delegate
 extension MACAddressDetailViewController: UIPickerViewDelegate {
 
+    func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String! {
+        if let unwrappedViewModel = viewModel {
+            return unwrappedViewModel.pickerView(titleForRow: row)
+        } else {
+            return ""
+        }
+    }
+
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if let unwrappedViewModel = viewModel {
+            unwrappedViewModel.textFieldLength(countElements(textField.text))
+            return unwrappedViewModel.pickerView(didSelectRow: row, inComponent: component)
+        }
+    }
+}
+
+// MARK: UIPicker View Data Source
+extension MACAddressDetailViewController: UIPickerViewDataSource {
+
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        if let unwrappedViewModel = viewModel {
+            return unwrappedViewModel.numberOfComponentsInPickerView()
+        } else {
+            return 0
+        }
+    }
+
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if let unwrappedViewModel = viewModel {
+            return unwrappedViewModel.numberOfRowsInComponentInPickerView()
+        } else {
+            return 0
+        }
+    }
 }

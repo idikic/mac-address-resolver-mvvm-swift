@@ -15,12 +15,15 @@ protocol MACAddressDetailViewModel {
     var pickerViewData: Dynamic<[String]> { get }
     var textFieldText: Dynamic<String> { get }
     var textFieldPlaceholderText: Dynamic<String> { get }
+    var textFieldTextLength: Dynamic<Int> { get }
     var textViewText: Dynamic<String> { get }
     var buttonTitle: Dynamic<String> { get }
 
+    func textFieldLength(length: Int)
     func numberOfComponentsInPickerView() -> Int
-    func numberOrRowsInComponentInPickerView() -> Int
-    func titleForRow(row: Int, component: Int) -> String
+    func numberOfRowsInComponentInPickerView() -> Int
+    func pickerView(titleForRow row: Int) -> String
+    func pickerView(didSelectRow row: Int, inComponent component: Int)
 
     func download(selectedSegmentedIndex: Int, macAddress: String)
     func validateMACAddress(macAddress: String) -> Bool
