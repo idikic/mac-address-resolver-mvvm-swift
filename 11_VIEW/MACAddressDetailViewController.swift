@@ -51,6 +51,13 @@ class MACAddressDetailViewController: UIViewController {
             self.macAddressItem = $0
         }
 
+        viewModel!.enabled.bindAndFire {
+            [unowned self] in
+            self.textField.enabled = $0
+            self.button.enabled = $0
+            self.segmentedControl.enabled = $0
+        }
+
         viewModel!.textFieldText.bindAndFire {
             [unowned self] in
             self.textField.text = $0
@@ -70,6 +77,11 @@ class MACAddressDetailViewController: UIViewController {
             [unowned self] in
             self.textView.text = $0
         }
+    }
+
+    // MARK: User Action
+    @IBAction func buttonLookUpAction(sender: UIButton) {
+        viewModel?.download(segmentedControl.selectedSegmentIndex)
     }
 }
 

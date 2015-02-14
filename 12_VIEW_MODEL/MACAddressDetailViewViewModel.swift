@@ -10,6 +10,7 @@ import Foundation
 
 class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
 
+    // MARK: Propertys
     internal let textFieldTextLength: Dynamic<Int>
 
     let viewTitle: Dynamic<String>
@@ -19,7 +20,9 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
     let textFieldPlaceholderText: Dynamic<String>
     let textViewText: Dynamic<String>
     let buttonTitle: Dynamic<String>
+    let enabled: Dynamic<Bool>
 
+    // MARK: Lifecycle
     init(macAddress: MACAddressItem?) {
         self.viewTitle = Dynamic("New Device")
         self.macAddressItem = Dynamic(nil)
@@ -33,12 +36,11 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
         self.buttonTitle = Dynamic("LOOK UP")
         self.textViewText = Dynamic("RESULTS")
         self.textFieldTextLength = Dynamic(0)
+
+        self.enabled = Dynamic(true)
     }
 
-    func textFieldLength(length: Int) {
-        textFieldTextLength.value = length
-    }
-    
+    // MARK: UIPicker View Helpers
     func numberOfComponentsInPickerView() -> Int {
         return 6;
     }
@@ -68,12 +70,25 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
         }
     }
 
-    func download(selectedSegmentedIndex: Int, macAddress: String) {
-
+    func textFieldLength(length: Int) {
+        textFieldTextLength.value = length
     }
 
+    func download(selectedSegmentedIndex: Int) {
+        if (selectedSegmentedIndex == 0 || selectedSegmentedIndex == 2) {
+            var macAddress = textFieldText.value + "000000"
+            if validateMACAddress(macAddress) {
+                MACAddressStore.sharedStore.createItem(macAddress) {
+                    (macAddressItem) in
+                    println(macAddressItem)
+                }
+            }
+        }
+    }
+
+    // MARK: Internal Helpers
     func validateMACAddress(macAddress: String) -> Bool {
-        return false
+        return macAddress =~ kValidMACAddressRegex
     }
 
     func validateIPAddress(ipAddress: String) -> Bool {
