@@ -20,7 +20,8 @@ protocol MACAddressDetailViewModel {
     var buttonTitle: Dynamic<String> { get }
     var enabled: Dynamic<Bool> { get }
 
-    func textFieldLength(length: Int)
+    func textFieldTextLength(length: Int)
+    func textFieldTextDidChange(newText: String)
     func numberOfComponentsInPickerView() -> Int
     func numberOfRowsInComponentInPickerView() -> Int
     func pickerView(titleForRow row: Int) -> String

@@ -40,7 +40,7 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
         self.enabled = Dynamic(true)
     }
 
-    // MARK: UIPicker View Helpers
+    // MARK: UIPicker View
     func numberOfComponentsInPickerView() -> Int {
         return 6;
     }
@@ -66,17 +66,22 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
             textFieldText.value = replacedString
 
         } else {
-            textFieldText.value = textFieldText.value + pickerViewData.value[row]
+            textFieldText.value += pickerViewData.value[row]
         }
     }
 
-    func textFieldLength(length: Int) {
+    // MARK: UIText Field
+    func textFieldTextLength(length: Int) {
         textFieldTextLength.value = length
+    }
+
+    func textFieldTextDidChange(newText: String) {
+        textFieldText.value = newText
     }
 
     func download(selectedSegmentedIndex: Int) {
         if (selectedSegmentedIndex == 0 || selectedSegmentedIndex == 2) {
-            var macAddress = textFieldText.value + "000000"
+            var macAddress = textFieldText.value + "00:00:00"
             if validateMACAddress(macAddress) {
                 MACAddressStore.sharedStore.createItem(macAddress) {
                     (macAddressItem) in
