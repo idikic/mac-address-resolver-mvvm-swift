@@ -79,7 +79,7 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
         textFieldText.value = newText
     }
 
-    func download(selectedSegmentedIndex: Int) {
+    func resolve(selectedSegmentedIndex: Int, errorHandler: (message: String?) -> ()) {
         if (selectedSegmentedIndex == 0 || selectedSegmentedIndex == 2) {
             var macAddress = textFieldText.value + "00:00:00"
             if validateMACAddress(macAddress) {
@@ -87,6 +87,8 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
                     (macAddressItem) in
                     println(macAddressItem)
                 }
+            } else {
+                errorHandler(message: "Invalid MAC address")
             }
         }
     }

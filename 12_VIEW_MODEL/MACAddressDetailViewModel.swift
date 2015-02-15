@@ -27,7 +27,7 @@ protocol MACAddressDetailViewModel {
     func pickerView(titleForRow row: Int) -> String
     func pickerView(didSelectRow row: Int, inComponent component: Int)
 
-    func download(selectedSegmentedIndex: Int)
+    func resolve(selectedSegmentedIndex: Int, errorHandler:(message: String?) -> ())
     func validateMACAddress(macAddress: String) -> Bool
     func validateIPAddress(ipAddress: String) -> Bool
 

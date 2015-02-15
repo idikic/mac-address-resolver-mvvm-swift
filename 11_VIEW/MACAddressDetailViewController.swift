@@ -84,7 +84,10 @@ class MACAddressDetailViewController: UIViewController {
 
     // MARK: User Action
     @IBAction func buttonLookUpAction(sender: UIButton) {
-        viewModel.download(segmentedControl.selectedSegmentIndex)
+        viewModel.resolve(segmentedControl.selectedSegmentIndex) {
+            [unowned self] (errorMessage) in
+            Alerts.showAlert(self, message: errorMessage)
+        }
     }
 
     // MARK: Internal Helpers
