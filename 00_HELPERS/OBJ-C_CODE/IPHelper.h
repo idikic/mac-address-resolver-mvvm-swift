@@ -10,8 +10,7 @@
 
 @interface IPHelper : NSObject
 
-+ (NSString *)ip2mac:(in_addr_t)ipAddress withBlock:(void(^)(NSString *error))block;
-+ (in_addr_t)convertIPAddress:(NSString *)ipAddress;
++ (NSString *)ip2mac:(NSString *)ipAddress withBlock:(void (^)(NSString *))block;
 
 @end
 
