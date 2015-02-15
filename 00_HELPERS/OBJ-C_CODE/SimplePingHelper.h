@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "SimplePing.h"
 
+typedef void (^CompletionHandler)(BOOL success);
+
 @interface SimplePingHelper : NSObject <SimplePingDelegate>
 
-+ (void)ping:(NSString*)address target:(id)target sel:(SEL)sel;
++ (void)ping:(NSString*)address completionHandler:(CompletionHandler)handler;
 
 @end
