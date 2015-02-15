@@ -1,49 +1,31 @@
 //
 //  NetworkUtility.m
-//  M@C
+//  M.A.C.
 //
-//  Created by iki on 8/1/13.
+//  Created by Ivan Dikic on 8/1/13.
 //  Copyright (c) 2013 iki. All rights reserved.
 //
 
-#import "NetworkUtility.h"
-
-#include <sys/param.h>
-#include <sys/file.h>
-#include <sys/socket.h>
-#include <sys/sysctl.h>
-
-#include <net/if.h>
-#include <net/if_dl.h>
-
-//IMPORTANT FOR STRIPPED DOWN VERSION OF ARP
-#include "if_types.h"
-
-//IMPORTANT FOR STRIPPED DOWN VERSION OF ARP
-//?? WHY O WHY
-//SIMULATOR
-//#include <net/route.h>
-//DEVICE - route.h imported Apple directory
-//#include "route.h"
+#import "IPHelper.h"
 
 #if TARGET_IPHONE_SIMULATOR
 #include <net/route.h>
 #else
 #include "route.h"
 #endif
-
-//IMPORTANT FOR STRIPPED DOWN VERSION OF ARP
+#include <sys/param.h>
+#include <sys/file.h>
+#include <sys/socket.h>
+#include <sys/sysctl.h>
+#include <net/if.h>
+#include <net/if_dl.h>
+#include "if_types.h"
 #include "if_ether.h"
-
 #include <netinet/in.h>
-
-
 #include <arpa/inet.h>
-
 #include <err.h>
 #include <errno.h>
 #include <netdb.h>
-
 #include <paths.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -51,9 +33,9 @@
 #include <unistd.h>
 
 
-@implementation NetworkUtility
+@implementation IPHelper
 
-+ (NSString*)ip2mac:(in_addr_t)addr withBlock:(void (^)(NSString *))block
++ (NSString*)ip2mac:(in_addr_t)ipAddress withBlock:(void (^)(NSString *))block
 {
     NSString *ret = nil;
     
@@ -74,23 +56,31 @@
     mib[5] = RTF_LLINFO;
     
     if (sysctl(mib, sizeof(mib) / sizeof(mib[0]), NULL, &needed, NULL, 0) < 0)
+    {
         err(1, "route-sysctl-estimate");
-    
+    }
+
     if ((buf = (char*)malloc(needed)) == NULL)
+    {
         err(1, "malloc");
-    
+    }
+
     if (sysctl(mib, sizeof(mib) / sizeof(mib[0]), buf, &needed, NULL, 0) < 0)
+    {
         err(1, "retrieval of routing table");
-    
-    for (next = buf; next < buf + needed; next += rtm->rtm_msglen) {
-        
+    }
+
+    for (next = buf; next < buf + needed; next += rtm->rtm_msglen)
+    {
         rtm = (struct rt_msghdr *)next;
         sin = (struct sockaddr_inarp *)(rtm + 1);
         sdl = (struct sockaddr_dl *)(sin + 1);
         
-        if (addr != sin->sin_addr.s_addr || sdl->sdl_alen < 6)
+        if (ipAddress != sin->sin_addr.s_addr || sdl->sdl_alen < 6)
+        {
             continue;
-        
+        }
+
         u_char *cp = (u_char*)LLADDR(sdl);
         
         ret = [NSString stringWithFormat:@"%02X:%02X:%02X:%02X:%02X:%02X",
@@ -100,11 +90,9 @@
     }
     
     free(buf);
-    
-    //NSLog(@"%@",ret);
-    
-    if (ret == NULL) {
-        
+
+    if (ret == NULL)
+    {
         NSString *error = @"IP address not found in ARP table";
         block(error);
     }

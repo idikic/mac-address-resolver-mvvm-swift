@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Reachability
 
 class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
 
@@ -108,6 +109,18 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
 
     func pingResults(number: NSNumber) {
 
+    }
+
+    func isReachableForLocalWiFi() -> Bool {
+        var reachableWiFi = Reachability.reachabilityForLocalWiFi()
+        var status = reachableWiFi.currentReachabilityStatus()
+        return (status == .ReachableViaWiFi)
+    }
+
+    func isReachableForInternetConnection() -> Bool {
+        var reachableWWAN = Reachability.reachabilityForInternetConnection()
+        var status = reachableWWAN.currentReachabilityStatus()
+        return (status == .ReachableViaWWAN)
     }
 
 }
