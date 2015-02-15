@@ -1,7 +1,7 @@
 import UIKit
 import Foundation
 
-class Dynamic<T> {
+class Observable<T> {
     typealias Listener = T -> Void
     var listener: Listener?
 
@@ -29,7 +29,7 @@ class Dynamic<T> {
 
 /*
  // 0.
-class DynamicString {
+class ObservableString {
     var value: String {
         didSet {
             println("did set value to \(value)")
@@ -41,14 +41,14 @@ class DynamicString {
     }
 }
 
-let name = DynamicString("Ivan") // Does not print anything
+let name = ObservableString("Ivan") // Does not print anything
 println(name.value)              // prints: Ivan
 name.value = "Slavko"            // prints: did set value to Slavko
 */
 
 /*
  // 1.
-class DynamicString {
+class ObservableString {
     typealias Listener = String -> Void
     var listener: Listener?
 
@@ -67,7 +67,7 @@ class DynamicString {
     }
 }
 
-let name = DynamicString("Ivan")
+let name = ObservableString("Ivan")
 name.bind({ value in
     println(value)
 })
@@ -78,7 +78,7 @@ name.value = "Jan"
 
 /*
  // 2.
-class DynamicString {
+class ObservableString {
     typealias Listener = String -> Void
     var listener: Listener?
 
@@ -102,7 +102,7 @@ class DynamicString {
     }
 }
 
-let name = DynamicString("Ivan")
+let name = ObservableString("Ivan")
 name.bindAndFire({ value in
     println(value)
 })

@@ -8,9 +8,7 @@
 
 import Foundation
 
-import Foundation
-
-class Dynamic<T> {
+class Observable<T> {
     typealias Listener = T -> Void
     var listener: Listener?
 

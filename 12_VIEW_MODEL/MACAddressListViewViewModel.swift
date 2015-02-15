@@ -10,12 +10,12 @@ import Foundation
 
 class MACAddressListViewViewModel : MACAddressListViewModel {
 
-    let viewTitle: Dynamic<String>
+    let viewTitle: Observable<String>
     let macAddressStore: MACAddressStore
 
     required init(macAddressStore: MACAddressStore) {
         self.macAddressStore = macAddressStore
-        self.viewTitle = Dynamic("Devices")
+        self.viewTitle = Observable("Devices")
     }
 
     func numberOfSections() -> Int {

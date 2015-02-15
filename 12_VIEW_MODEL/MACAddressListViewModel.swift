@@ -10,7 +10,7 @@ import Foundation
 
 protocol MACAddressListViewModel {
 
-    var viewTitle: Dynamic<String> { get }
+    var viewTitle: Observable<String> { get }
     var macAddressStore: MACAddressStore { get }
     func numberOfSections() -> Int
     func numberOfItemsInSection() -> Int

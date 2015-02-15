@@ -11,33 +11,33 @@ import Foundation
 class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
 
     // MARK: Propertys
-    internal let textFieldTextLength: Dynamic<Int>
+    internal let textFieldTextLength: Observable<Int>
 
-    let viewTitle: Dynamic<String>
-    let macAddressItem: Dynamic<MACAddressItem?>
-    let pickerViewData: Dynamic<[String]>
-    let textFieldText: Dynamic<String>
-    let textFieldPlaceholderText: Dynamic<String>
-    let textViewText: Dynamic<String>
-    let buttonTitle: Dynamic<String>
-    let enabled: Dynamic<Bool>
+    let viewTitle: Observable<String>
+    let macAddressItem: Observable<MACAddressItem?>
+    let pickerViewData: Observable<[String]>
+    let textFieldText: Observable<String>
+    let textFieldPlaceholderText: Observable<String>
+    let textViewText: Observable<String>
+    let buttonTitle: Observable<String>
+    let enabled: Observable<Bool>
 
     // MARK: Lifecycle
     init(macAddress: MACAddressItem?) {
-        self.viewTitle = Dynamic("New Device")
-        self.macAddressItem = Dynamic(nil)
-        self.pickerViewData = Dynamic(   ["0", "1", "2",
+        self.viewTitle = Observable("New Device")
+        self.macAddressItem = Observable(nil)
+        self.pickerViewData = Observable(   ["0", "1", "2",
                                           "3", "4", "5",
                                           "6", "7", "8",
                                           "9", "A", "B",
                                           "C", "D", "E", "F"])
-        self.textFieldText = Dynamic("")
-        self.textFieldPlaceholderText = Dynamic("tap to start")
-        self.buttonTitle = Dynamic("LOOK UP")
-        self.textViewText = Dynamic("RESULTS")
-        self.textFieldTextLength = Dynamic(0)
+        self.textFieldText = Observable("")
+        self.textFieldPlaceholderText = Observable("tap to start")
+        self.buttonTitle = Observable("LOOK UP")
+        self.textViewText = Observable("RESULTS")
+        self.textFieldTextLength = Observable(0)
 
-        self.enabled = Dynamic(true)
+        self.enabled = Observable(true)
     }
 
     // MARK: UIPicker View

@@ -10,15 +10,15 @@ import Foundation
 
 protocol MACAddressDetailViewModel {
 
-    var viewTitle: Dynamic<String> { get }
-    var macAddressItem: Dynamic<MACAddressItem?> { get }
-    var pickerViewData: Dynamic<[String]> { get }
-    var textFieldText: Dynamic<String> { get }
-    var textFieldPlaceholderText: Dynamic<String> { get }
-    var textFieldTextLength: Dynamic<Int> { get }
-    var textViewText: Dynamic<String> { get }
-    var buttonTitle: Dynamic<String> { get }
-    var enabled: Dynamic<Bool> { get }
+    var viewTitle: Observable<String> { get }
+    var macAddressItem: Observable<MACAddressItem?> { get }
+    var pickerViewData: Observable<[String]> { get }
+    var textFieldText: Observable<String> { get }
+    var textFieldPlaceholderText: Observable<String> { get }
+    var textFieldTextLength: Observable<Int> { get }
+    var textViewText: Observable<String> { get }
+    var buttonTitle: Observable<String> { get }
+    var enabled: Observable<Bool> { get }
 
     func textFieldTextLength(length: Int)
     func textFieldTextDidChange(newText: String)
