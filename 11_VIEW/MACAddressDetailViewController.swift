@@ -12,8 +12,23 @@ import AVFoundation
 class MACAddressDetailViewController: UIViewController {
 
   // MARK: Propertys
-  @IBOutlet weak var segmentedControl: UISegmentedControl!
-  @IBOutlet weak var textField: UITextField!
+  @IBOutlet weak var segmentedControl: UISegmentedControl! {
+    didSet {
+      segmentedControl.addTarget(self,
+                                 action: Selector("segmentedControlDidSelectSegment:"),
+                                 forControlEvents: .ValueChanged)
+    }
+  }
+
+  @IBOutlet weak var textField: UITextField! {
+    didSet {
+      textField.clearButtonMode = UITextFieldViewMode.Always
+      textField.addTarget(self,
+                          action: Selector("textFieldTextDidChange:"),
+                          forControlEvents: UIControlEvents.EditingChanged)
+    }
+  }
+
   @IBOutlet weak var button: UIButton!
   @IBOutlet weak var textView: UITextView!
 
@@ -34,12 +49,6 @@ class MACAddressDetailViewController: UIViewController {
 
     // CONFIGURATION
     bindToViewModel()
-
-    textField.inputView = pickerView
-    textField.clearButtonMode = UITextFieldViewMode.Always
-    textField.addTarget(self,
-                        action: Selector("textFieldTextDidChange:"),
-                        forControlEvents: UIControlEvents.EditingChanged)
   }
 
   // MARK: Binding
@@ -54,11 +63,26 @@ class MACAddressDetailViewController: UIViewController {
       self.macAddressItem = $0
     }
 
-    viewModel.enabled.bindAndFire {
+    viewModel.segmentedControlSelectedSegment.bindAndFire {
       [unowned self] in
-      self.textField.enabled = $0
-      self.button.enabled = $0
-      self.segmentedControl.enabled = $0
+      self.segmentedControl.selectedSegmentIndex = $0
+
+      self.textField.resignFirstResponder()
+      self.textField.inputView = nil
+
+      switch self.segmentedControl.selectedSegmentIndex {
+      case 0:
+        self.textField.inputView = self.pickerView
+
+      case 1:
+        self.textField.keyboardType = .NumbersAndPunctuation
+
+      case 2:
+        self.performSegueWithIdentifier("BarcodeScannerSegue",
+                                        sender: self.segmentedControl)
+      default:
+        return
+      }
     }
 
     viewModel.textFieldText.bindAndFire {
@@ -84,7 +108,7 @@ class MACAddressDetailViewController: UIViewController {
 
   // MARK: User Action
   @IBAction func buttonLookUpAction(sender: UIButton) {
-    viewModel.resolve(segmentedControl.selectedSegmentIndex) {
+    viewModel.resolve() {
       [unowned self] (errorMessage) in
       Alerts.showAlert(self, message: errorMessage)
     }
@@ -93,6 +117,10 @@ class MACAddressDetailViewController: UIViewController {
   // MARK: Internal Helpers
   func textFieldTextDidChange(textField: UITextField!) {
     viewModel.textFieldTextDidChange(textField.text)
+  }
+
+  func segmentedControlDidSelectSegment(sender: UISegmentedControl!) {
+    viewModel.segmentedControlDidSelectSegment(sender.selectedSegmentIndex)
   }
 }
 

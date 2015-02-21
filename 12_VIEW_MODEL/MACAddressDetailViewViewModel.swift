@@ -22,7 +22,6 @@ enum Result<T> {
   case Error(String)
 }
 
-
 class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
 
   // MARK: Propertys
@@ -30,12 +29,12 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
 
   let viewTitle: Observable<String>
   let macAddressItem: Observable<MACAddressItem?>
+  let segmentedControlSelectedSegment: Observable<Int>
   let pickerViewData: Observable<[String]>
   let textFieldText: Observable<String>
   let textFieldPlaceholderText: Observable<String>
   let textViewText: Observable<String>
   let buttonTitle: Observable<String>
-  let enabled: Observable<Bool>
 
   // MARK: Lifecycle
   init(macAddress: MACAddressItem?) {
@@ -51,8 +50,8 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
     self.buttonTitle = Observable("LOOK UP")
     self.textViewText = Observable("RESULTS")
     self.textFieldTextLength = Observable(0)
+    self.segmentedControlSelectedSegment = Observable(0)
 
-    self.enabled = Observable(true)
   }
 
   // MARK: UIPicker View
@@ -77,7 +76,8 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
       var rangeOfStringToReplace = Range(start: startIndex, end: endIndex)
       var newString = pickerViewData.value[row]
       var replacedString =
-          textFieldText.value.stringByReplacingCharactersInRange(rangeOfStringToReplace, withString: newString)
+          textFieldText.value.stringByReplacingCharactersInRange(rangeOfStringToReplace,
+                                                                 withString: newString)
       textFieldText.value = replacedString
 
     } else {
@@ -94,9 +94,14 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
     textFieldText.value = newText
   }
 
-  func resolve(selectedSegmentedIndex: Int, errorHandler: (message: String?) -> ()) {
-    if (selectedSegmentedIndex == 0 || selectedSegmentedIndex == 2) {
-      var macAddress = textFieldText.value + "00:00:00"
+  func resolve(errorHandler: (message: String?) -> ()) {
+    if (segmentedControlSelectedSegment.value == 0 || segmentedControlSelectedSegment.value == 2) {
+      var macAddress: String
+      if countElements(textFieldText.value) == 6 {
+        macAddress = textFieldText.value + "00:00:00"
+      } else {
+        macAddress = textFieldText.value
+      }
       if validateMACAddress(macAddress) {
         MACAddressStore.sharedStore.createItem(macAddress) {
             (macAddressItem) in
@@ -113,7 +118,10 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
              [unowned self] (success) in
               if success {
                 switch self.resolveMACAddressFromIPAddress(ipAddress) {
-                    case .Success(let macAddress): self.textFieldText.value = macAddress()
+                    case .Success(let macAddress):
+                      self.textFieldText.value = macAddress()
+                      self.buttonTitle.value = "LOOK UP"
+                      self.segmentedControlSelectedSegment.value = 0
                     case .Error(let error): errorHandler(message: error)
                 }
               } else {
@@ -126,6 +134,22 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
       } else {
         errorHandler(message: "No local WiFi connection")
       }
+    }
+  }
+
+  // MARK: UISegmented Control
+  func segmentedControlDidSelectSegment(selectedSegment: Int) {
+    segmentedControlSelectedSegment.value = selectedSegment
+
+    switch selectedSegment {
+    case 0:
+      buttonTitle.value = "LOOK UP"
+    case 1:
+      buttonTitle.value = "RESOLVE IP ADDRESS"
+    case 2:
+      buttonTitle.value = "LOOK UP"
+    default:
+      return
     }
   }
 

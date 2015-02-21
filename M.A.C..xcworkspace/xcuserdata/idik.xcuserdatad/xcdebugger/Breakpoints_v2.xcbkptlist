@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "00_HELPERS/OBJ-C_CODE/SimplePingHelper.m"
-            timestampString = "445780626.401402"
+            timestampString = "446206045.751446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "-successPing"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,13 +26,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "00_HELPERS/OBJ-C_CODE/SimplePingHelper.m"
-            timestampString = "445780626.401402"
+            timestampString = "446206045.751446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "-failPing:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "12_VIEW_MODEL/MACAddressDetailViewViewModel.swift"
+            timestampString = "446229205.845209"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "resolve(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "12_VIEW_MODEL/MACAddressDetailViewViewModel.swift"
+            timestampString = "446229207.622748"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "resolve(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "12_VIEW_MODEL/MACAddressDetailViewViewModel.swift"
+            timestampString = "446229218.254383"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "resolve(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "M_A_C_.MACAddressDetailViewViewModel.resolve (M_A_C_.MACAddressDetailViewViewModel)((message : Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "M.A.C."
+                  urlString = "file:///Users/idik/Desktop/MAC/mac-address-resolver-universal/12_VIEW_MODEL/MACAddressDetailViewViewModel.swift"
+                  timestampString = "446229218.257167"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "1433">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "M_A_C_.MACAddressDetailViewViewModel.(resolve (M_A_C_.MACAddressDetailViewViewModel) -&gt; ((message : Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "M.A.C."
+                  urlString = "file:///Users/idik/Desktop/MAC/mac-address-resolver-universal/12_VIEW_MODEL/MACAddressDetailViewViewModel.swift"
+                  timestampString = "446229218.257313"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -16,9 +16,9 @@ protocol MACAddressDetailViewModel {
   var textFieldText: Observable<String> { get }
   var textFieldPlaceholderText: Observable<String> { get }
   var textFieldTextLength: Observable<Int> { get }
+  var segmentedControlSelectedSegment: Observable<Int> { get }
   var textViewText: Observable<String> { get }
   var buttonTitle: Observable<String> { get }
-  var enabled: Observable<Bool> { get }
 
   func textFieldTextLength(length: Int)
   func textFieldTextDidChange(newText: String)
@@ -26,8 +26,9 @@ protocol MACAddressDetailViewModel {
   func numberOfRowsInComponentInPickerView() -> Int
   func pickerView(titleForRow row: Int) -> String
   func pickerView(didSelectRow row: Int, inComponent component: Int)
+  func segmentedControlDidSelectSegment(selectedSegment: Int)
 
-  func resolve(selectedSegmentedIndex: Int, errorHandler:(message: String?) -> ())
+  func resolve(errorHandler:(message: String?) -> ())
   func validateMACAddress(macAddress: String) -> Bool
   func validateIPAddress(ipAddress: String) -> Bool
   func resolveMACAddressFromIPAddress(ipAddress: String) -> Result<String>
