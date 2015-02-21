@@ -30,8 +30,6 @@ protocol MACAddressDetailViewModel {
     func resolve(selectedSegmentedIndex: Int, errorHandler:(message: String?) -> ())
     func validateMACAddress(macAddress: String) -> Bool
     func validateIPAddress(ipAddress: String) -> Bool
-
-    func resolveMACAddressFromIPAddress(ipAddress: String) -> String?
-    func pingResults(number: NSNumber)
+    func resolveMACAddressFromIPAddress(ipAddress: String) -> Result<String>
 
 }

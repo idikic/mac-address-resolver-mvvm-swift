@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^IPCompletionHandler)(NSString *macAddress, NSString *error);
+
 @interface IPHelper : NSObject
 
-+ (NSString *)ip2mac:(NSString *)ipAddress withBlock:(void (^)(NSString *))block;
++ (void)macAddressFromIPAddress:(NSString *)ipAddress
+              completionHandler:(IPCompletionHandler)completionHandler;
 
 @end
 

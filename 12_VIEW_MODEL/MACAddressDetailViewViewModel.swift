@@ -9,6 +9,20 @@
 import Foundation
 import Reachability
 
+enum Result<T> {
+    // This might not be a desired behaviour, BUT this is
+    // the only way for now to have a enum used in the protocol as
+    // a return type. Swfit need to know full layout size of the enum
+    // at a compile time.
+    //
+    // More info at:
+    //
+    // http://owensd.io/2014/08/06/fixed-enum-layout.html
+    case Success(@autoclosure() -> T)
+    case Error(String)
+}
+
+
 class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
 
     // MARK: Propertys
@@ -91,6 +105,27 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
             } else {
                 errorHandler(message: "Invalid MAC address")
             }
+        } else {
+            var ipAddress = textFieldText.value
+            if isReachableForLocalWiFi() {
+                if validateIPAddress(ipAddress) {
+                    SimplePingHelper.ping(ipAddress) {
+                       [unowned self] (success) in
+                        if success {
+                            switch self.resolveMACAddressFromIPAddress(ipAddress) {
+                                case .Success(let macAddress): self.textFieldText.value = macAddress()
+                                case .Error(let error): errorHandler(message: error)
+                            }
+                        } else {
+                            errorHandler(message: "Destination host unreachable")
+                        }
+                    }
+                } else {
+                    errorHandler(message: "Invalid IP address")
+                }
+            } else {
+                errorHandler(message: "No local WiFi connection")
+            }
         }
     }
 
@@ -100,15 +135,23 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
     }
 
     func validateIPAddress(ipAddress: String) -> Bool {
-        return false
+        return (ipAddress as NSString).isValidIPAddress()
     }
 
-    func resolveMACAddressFromIPAddress(ipAddress: String) -> String? {
-        return "FALSE"
-    }
+    func resolveMACAddressFromIPAddress(ipAddress: String) -> Result<String> {
 
-    func pingResults(number: NSNumber) {
+        var result: Result<String>!
+        IPHelper.macAddressFromIPAddress(ipAddress) {
+            (macAddress, error) in
 
+            if macAddress != nil {
+                result = .Success(macAddress)
+            } else {
+                result = .Error(error)
+            }
+        }
+
+        return result
     }
 
     func isReachableForLocalWiFi() -> Bool {

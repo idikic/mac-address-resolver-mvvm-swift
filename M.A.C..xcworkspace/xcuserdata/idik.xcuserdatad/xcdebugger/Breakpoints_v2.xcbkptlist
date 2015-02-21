@@ -106,13 +106,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "12_VIEW_MODEL/MACAddressDetailViewViewModel.swift"
-            timestampString = "445693276.933197"
+            timestampString = "445780626.401402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "pickerView(didSelectRow:inComponent:)"
-            landmarkType = "5">
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "MACAddressDetailViewViewModel"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "12_VIEW_MODEL/MACAddressDetailViewViewModel.swift"
-            timestampString = "445693276.933197"
+            timestampString = "445780626.401402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "pickerView(didSelectRow:inComponent:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,13 +170,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "12_VIEW_MODEL/MACAddressDetailViewViewModel.swift"
-            timestampString = "445693344.25146"
+            timestampString = "445780626.401402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "resolve(_:errorHandler:)"
-            landmarkType = "5">
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "MACAddressDetailViewViewModel"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "00_HELPERS/OBJ-C_CODE/SimplePingHelper.m"
-            timestampString = "445693378.923315"
+            timestampString = "445780626.401402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "-successPing"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "00_HELPERS/OBJ-C_CODE/SimplePingHelper.m"
-            timestampString = "445693385.752071"
+            timestampString = "445780626.401402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "-failPing:"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "00_HELPERS/OBJ-C_CODE/SimplePingHelper.m"
-            timestampString = "445693479.430328"
+            timestampString = "445780626.401402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "-initWithAddress:completionHandler:"
             landmarkType = "5">
          </BreakpointContent>

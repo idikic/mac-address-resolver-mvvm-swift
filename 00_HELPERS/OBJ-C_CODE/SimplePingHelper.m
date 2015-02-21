@@ -11,7 +11,7 @@
 @interface SimplePingHelper()
 
 @property (nonatomic,strong) SimplePing* simplePing;
-@property (nonatomic, copy) CompletionHandler completionHandler;
+@property (nonatomic, copy) PingCompletionHandler completionHandler;
 
 @end
 
@@ -21,10 +21,10 @@
 
 // Pings the address, and calls the completion handler when done.
 // Completion handler must take a NSnumber which is a bool for success.
-+ (void)ping:(NSString*)address completionHandler:(CompletionHandler)handler
++ (void)ping:(NSString*)address completionHandler:(PingCompletionHandler)completionHandler
 {
 	// The helper retains itself through the timeout function
-	[[[SimplePingHelper alloc] initWithAddress:address completionHandler:handler] go];
+	[[[SimplePingHelper alloc] initWithAddress:address completionHandler:completionHandler] go];
 }
 
 #pragma mark - Lifecycle
@@ -35,13 +35,14 @@
 	self.completionHandler = nil;
 }
 
-- (instancetype)initWithAddress:(NSString*)address completionHandler:(CompletionHandler)handler
+- (instancetype)initWithAddress:(NSString*)address
+              completionHandler:(PingCompletionHandler)completionHandler
 {
 	if (self = [self init])
     {
 		self.simplePing = [SimplePing simplePingWithHostName:address];
 		self.simplePing.delegate = self;
-        self.completionHandler = handler;
+        self.completionHandler = completionHandler;
 	}
 	return self;
 }

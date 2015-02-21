@@ -35,9 +35,10 @@
 
 @implementation IPHelper
 
-+ (NSString *)ip2mac:(NSString *)ipAddress withBlock:(void (^)(NSString *))block
++ (void)macAddressFromIPAddress:(NSString *)ipAddress
+              completionHandler:(IPCompletionHandler)completionHandler
 {
-    NSString *returnValue = nil;
+    NSString *macAddress = nil;
 
     in_addr_t ipAddressBaseType = [IPHelper convertIPAddress:ipAddress];
     size_t needed;
@@ -83,7 +84,7 @@
 
         u_char *cp = (u_char*)LLADDR(sdl);
         
-        returnValue = [NSString stringWithFormat:
+        macAddress = [NSString stringWithFormat:
                                                 @"%02X:%02X:%02X:%02X:%02X:%02X",
                                                 cp[0],
                                                 cp[1],
@@ -96,13 +97,16 @@
     
     free(buffer);
 
-    if (returnValue == NULL)
+    if (macAddress == NULL)
     {
         NSString *error = @"IP address not found in ARP table";
-        block(error);
+        completionHandler(nil, error);
     }
-    
-    return returnValue;
+    else
+    {
+        completionHandler(macAddress, nil);
+    }
+
 }
 
 + (in_addr_t)convertIPAddress:(NSString *)ipAddress
