@@ -10,35 +10,35 @@ import Foundation
 
 class MACAddressListViewViewModel : MACAddressListViewModel {
 
-    let viewTitle: Observable<String>
-    let macAddressStore: MACAddressStore
+  let viewTitle: Observable<String>
+  let macAddressStore: MACAddressStore
 
-    required init(macAddressStore: MACAddressStore) {
-        self.macAddressStore = macAddressStore
-        self.viewTitle = Observable("Devices")
-    }
+  required init(macAddressStore: MACAddressStore) {
+    self.macAddressStore = macAddressStore
+    self.viewTitle = Observable("Devices")
+  }
 
-    func numberOfSections() -> Int {
-        return 1
-    }
+  func numberOfSections() -> Int {
+    return 1
+  }
 
-    func numberOfItemsInSection() -> Int {
-        return macAddressStore.allItems.count
-    }
+  func numberOfItemsInSection() -> Int {
+    return macAddressStore.allItems.count
+  }
 
-    func macAddressAtRow(row: Int, inSection: Int) -> String {
-        return macAddressStore.allItems[row].macAddress
-    }
+  func macAddressAtRow(row: Int, inSection: Int) -> String {
+    return macAddressStore.allItems[row].macAddress
+  }
 
-    func macAddressCreatedAtRow(row: Int, inSection: Int) -> String {
-        return ("\(macAddressStore.allItems[row].dateCreated)")
-    }
+  func macAddressCreatedAtRow(row: Int, inSection: Int) -> String {
+    return ("\(macAddressStore.allItems[row].dateCreated)")
+  }
 
-    func macAddressDeleteAtRow(row: Int, inSection: Int) {
-        macAddressStore.removeItemAt(row)
-    }
+  func macAddressDeleteAtRow(row: Int, inSection: Int) {
+    macAddressStore.removeItemAt(row)
+  }
 
-    func viewModelForMACAddressDetailView() -> MACAddressDetailViewViewModel {
-        return MACAddressDetailViewViewModel(macAddress: nil)
-    }
+  func viewModelForMACAddressDetailView() -> MACAddressDetailViewViewModel {
+    return MACAddressDetailViewViewModel(macAddress: nil)
+  }
 }

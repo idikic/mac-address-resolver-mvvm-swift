@@ -10,19 +10,19 @@ import Foundation
 import UIKit
 
 class Alerts {
-
-    class func showAlert(viewController: UIViewController, message: String?) {
-        if let messageToDisplay = message {
-            let alertController = UIAlertController(title: "",
-                message: messageToDisplay,
-                preferredStyle: .Alert)
-            let cancelAction = UIAlertAction(title: "OK", style: .Cancel) {
-                (action) in
-            }
-            alertController.addAction(cancelAction)
-            viewController.presentViewController(alertController,
-                animated: true,
-                completion: nil)
-        }
+  
+  class func showAlert(viewController: UIViewController, message: String?) {
+    if let messageToDisplay = message {
+      let alertController = UIAlertController(title: "",
+                                              message: messageToDisplay,
+                                              preferredStyle: .Alert)
+      let cancelAction = UIAlertAction(title: "OK", style: .Cancel) {
+        (action) in
+      }
+      alertController.addAction(cancelAction)
+      viewController.presentViewController(alertController,
+                                           animated: true,
+                                           completion: nil)
     }
+  }
 }

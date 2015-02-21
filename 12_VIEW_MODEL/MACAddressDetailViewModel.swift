@@ -10,26 +10,26 @@ import Foundation
 
 protocol MACAddressDetailViewModel {
 
-    var viewTitle: Observable<String> { get }
-    var macAddressItem: Observable<MACAddressItem?> { get }
-    var pickerViewData: Observable<[String]> { get }
-    var textFieldText: Observable<String> { get }
-    var textFieldPlaceholderText: Observable<String> { get }
-    var textFieldTextLength: Observable<Int> { get }
-    var textViewText: Observable<String> { get }
-    var buttonTitle: Observable<String> { get }
-    var enabled: Observable<Bool> { get }
+  var viewTitle: Observable<String> { get }
+  var macAddressItem: Observable<MACAddressItem?> { get }
+  var pickerViewData: Observable<[String]> { get }
+  var textFieldText: Observable<String> { get }
+  var textFieldPlaceholderText: Observable<String> { get }
+  var textFieldTextLength: Observable<Int> { get }
+  var textViewText: Observable<String> { get }
+  var buttonTitle: Observable<String> { get }
+  var enabled: Observable<Bool> { get }
 
-    func textFieldTextLength(length: Int)
-    func textFieldTextDidChange(newText: String)
-    func numberOfComponentsInPickerView() -> Int
-    func numberOfRowsInComponentInPickerView() -> Int
-    func pickerView(titleForRow row: Int) -> String
-    func pickerView(didSelectRow row: Int, inComponent component: Int)
+  func textFieldTextLength(length: Int)
+  func textFieldTextDidChange(newText: String)
+  func numberOfComponentsInPickerView() -> Int
+  func numberOfRowsInComponentInPickerView() -> Int
+  func pickerView(titleForRow row: Int) -> String
+  func pickerView(didSelectRow row: Int, inComponent component: Int)
 
-    func resolve(selectedSegmentedIndex: Int, errorHandler:(message: String?) -> ())
-    func validateMACAddress(macAddress: String) -> Bool
-    func validateIPAddress(ipAddress: String) -> Bool
-    func resolveMACAddressFromIPAddress(ipAddress: String) -> Result<String>
+  func resolve(selectedSegmentedIndex: Int, errorHandler:(message: String?) -> ())
+  func validateMACAddress(macAddress: String) -> Bool
+  func validateIPAddress(ipAddress: String) -> Bool
+  func resolveMACAddressFromIPAddress(ipAddress: String) -> Result<String>
 
 }

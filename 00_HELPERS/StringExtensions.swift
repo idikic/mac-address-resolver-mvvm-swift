@@ -11,75 +11,70 @@ import Foundation
 
 extension String {
    
-    func isValidMacAddress(macAddress: String) -> Bool {
-    
-        // CONVERT STRING TO const char *
-        var mac = macAddress.cStringUsingEncoding(NSASCIIStringEncoding)
-        
-        
-        var i = 0;
-        var s = 0;
-        
-        // POINTER TO RAW MEMORY VALUE OF const char *
-        var tempPointer: UnsafePointer<CChar>?
-        
-        // BRIDGE ??
-        mac?.withUnsafeBufferPointer() {
-            
-            (let addrBuffPtr : UnsafeBufferPointer<CChar>) -> () in
-            
-            var maxSize = mac?.count
-            var newSize = 0
-            
+  func isValidMacAddress(macAddress: String) -> Bool {
 
-            // USE POINTER TO MEMORY
-            tempPointer = addrBuffPtr.baseAddress
+    // CONVERT STRING TO const char *
+    var mac = macAddress.cStringUsingEncoding(NSASCIIStringEncoding)
+    var i = 0;
+    var s = 0;
+    
+    // POINTER TO RAW MEMORY VALUE OF const char *
+    var tempPointer: UnsafePointer<CChar>?
+    
+    // BRIDGE ??
+    mac?.withUnsafeBufferPointer() {
+
+      (let addrBuffPtr : UnsafeBufferPointer<CChar>) -> () in
+      
+        var maxSize = mac?.count
+        var newSize = 0
+
+        // USE POINTER TO MEMORY
+        tempPointer = addrBuffPtr.baseAddress
+        
+        while (maxSize != newSize) {
+
+            var xN:CChar = tempPointer!.memory
             
-            while (maxSize != newSize) {
+            if isxdigit(Int32(xN)) != 0 {
+                i++
+                println(i)
                 
-                // use pointer to memory
-                var xN:CChar = tempPointer!.memory
+            // 58 == ":"      45 == "-"
+            } else if xN == 58 || xN == 45 {
                 
-                if isxdigit(Int32(xN)) != 0 {
-                    i++
-                    println(i)
-                    
-                // 58 == ":"      45 == "-"
-                } else if xN == 58 || xN == 45 {
-                    
-                    if i == 0 || i / 2 - 1 != s {
-                        break
-                    }
-                    
-                    ++s
-                    
-                } else if xN != 0 {
-                    s = -1;
+                if i == 0 || i / 2 - 1 != s {
+                    break
                 }
                 
-                println("The ASCII value at index \(newSize) is \(xN)")
+                ++s
                 
-                // GET NEXT ELEMENT OF const char *
-                tempPointer = tempPointer!.successor()
-                
-                ++newSize
-                
+            } else if xN != 0 {
+                s = -1;
             }
             
-            // TODO: further investigation needed!!
-            //
-            //      addrBuffPtr.destroy()
+            println("The ASCII value at index \(newSize) is \(xN)")
+            
+            // GET NEXT ELEMENT OF const char *
+            tempPointer = tempPointer!.successor()
+    
+            ++newSize
         }
-
-        println("VALUE OF I: \(i)")
-        println("VALUE OF S: \(s)")
         
         // TODO: further investigation needed!!
         //
-        //      DESTROY UnsafePointer
-        //      tempPointer?.destroy()
-        return (i == 12 && (s == 5 || s == 0))
+        //      addrBuffPtr.destroy()
     }
+
+    println("VALUE OF I: \(i)")
+    println("VALUE OF S: \(s)")
+    
+    // TODO: further investigation needed!!
+    //
+    //      DESTROY UnsafePointer
+    //      tempPointer?.destroy()
+    return (i == 12 && (s == 5 || s == 0))
+  }
 }
 
 

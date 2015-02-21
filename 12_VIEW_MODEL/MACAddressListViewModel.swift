@@ -10,15 +10,16 @@ import Foundation
 
 protocol MACAddressListViewModel {
 
-    var viewTitle: Observable<String> { get }
-    var macAddressStore: MACAddressStore { get }
-    func numberOfSections() -> Int
-    func numberOfItemsInSection() -> Int
-    func macAddressAtRow(row: Int, inSection: Int) -> String
-    func macAddressCreatedAtRow(row: Int, inSection: Int) -> String
-    func macAddressDeleteAtRow(row: Int, inSection: Int)
+  var viewTitle: Observable<String> { get }
+  var macAddressStore: MACAddressStore { get }
+  func numberOfSections() -> Int
+  func numberOfItemsInSection() -> Int
+  func macAddressAtRow(row: Int, inSection: Int) -> String
+  func macAddressCreatedAtRow(row: Int, inSection: Int) -> String
+  func macAddressDeleteAtRow(row: Int, inSection: Int)
 
-    func viewModelForMACAddressDetailView() -> MACAddressDetailViewViewModel
+  func viewModelForMACAddressDetailView() -> MACAddressDetailViewViewModel
 
-    init(macAddressStore: MACAddressStore)
+  init(macAddressStore: MACAddressStore)
+  
 }
