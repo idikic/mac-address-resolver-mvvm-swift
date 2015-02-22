@@ -119,7 +119,8 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
               if success {
                 switch self.resolveMACAddressFromIPAddress(ipAddress) {
                     case .Success(let macAddress):
-                      self.textFieldText.value = macAddress()
+                      self.viewTitle.value = macAddress()
+                      self.textFieldText.value = self.formatMACAddressForPickerView(macAddress())
                       self.buttonTitle.value = "LOOK UP"
                       self.segmentedControlSelectedSegment.value = 0
                     case .Error(let error): errorHandler(message: error)
@@ -156,6 +157,18 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
   // MARK: Internal Helpers
   func validateMACAddress(macAddress: String) -> Bool {
     return macAddress =~ kValidMACAddressRegex
+  }
+
+  func formatMACAddressForPickerView(macAddress: String) -> String {
+    var formattedMACAddress: String = ""
+    for character in macAddress {
+      if character != ":" {
+        formattedMACAddress.append(character)
+      }
+    }
+    var index = advance(formattedMACAddress.startIndex, 6)
+
+    return formattedMACAddress.substringToIndex(index)
   }
 
   func validateIPAddress(ipAddress: String) -> Bool {
