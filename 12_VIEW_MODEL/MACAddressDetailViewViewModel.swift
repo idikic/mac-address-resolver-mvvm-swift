@@ -104,8 +104,11 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
       }
       if validateMACAddress(macAddress) {
         MACAddressStore.sharedStore.createItem(macAddress) {
-            (macAddressItem) in
+            (result) in
+          if let macAddressItem = result {
             println(macAddressItem)
+            self.textViewText.value = self.prepareMACAddressItemForDisplay(macAddressItem)
+          }
         }
       } else {
         errorHandler(message: Constants.UIString.messageInvalidMACAddress)
@@ -169,6 +172,26 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
     var index = advance(formattedMACAddress.startIndex, 6)
 
     return formattedMACAddress.substringToIndex(index)
+  }
+
+  func prepareMACAddressItemForDisplay(resultMACAddressItem: MACAddressItem) -> String {
+    var displayString: String = ""
+
+    if let company = resultMACAddressItem.company {
+      displayString = company + "\n"
+    }
+
+    if let address = resultMACAddressItem.address1 {
+      displayString += "\n" + address + "\n"
+    }
+
+    if let country = resultMACAddressItem.country {
+      displayString += "\n" + country + "\n"
+    }
+
+    displayString += "\n" + "\(resultMACAddressItem.dateCreated)"
+
+    return displayString
   }
 
   func validateIPAddress(ipAddress: String) -> Bool {

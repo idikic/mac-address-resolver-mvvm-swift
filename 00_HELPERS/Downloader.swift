@@ -16,7 +16,7 @@ class Downloader {
 
     let baseURL = "http://www.macvendorlookup.com/api/v2/"
     let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-    let session: NSURLSession = NSURLSession(configuration: config)
+    let session = NSURLSession(configuration: config)
 
     let task = session.dataTaskWithURL(NSURL(string: baseURL + macAddress)!) {
       (let data, let response, let error) in

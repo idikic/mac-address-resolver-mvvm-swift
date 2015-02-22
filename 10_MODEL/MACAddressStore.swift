@@ -36,11 +36,12 @@ class MACAddressStore: NSObject {
   func createItem(macAddress: String!, completionHandler:(macAddressItem: MACAddressItem?) -> ()) {
     Downloader.downloadJSON(macAddress) {
       (parsedJSON) in
+      println(parsedJSON)
       let item = MACAddressItem(macAddress: macAddress)
-      item?.company = parsedJSON["company"].stringValue
-      item?.address1 = parsedJSON["addressL1"].stringValue
-      item?.address2 = parsedJSON["addressL2"].stringValue
-      item?.country = parsedJSON["country"].stringValue
+      item?.company = parsedJSON[0]["company"].stringValue
+      item?.address1 = parsedJSON[0]["addressL1"].stringValue
+      item?.address2 = parsedJSON[0]["addressL2"].stringValue
+      item?.country = parsedJSON[0]["country"].stringValue
       self._privateItems.append(item!)
       completionHandler(macAddressItem: item)
     }
