@@ -46,8 +46,8 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
                                       "9", "A", "B",
                                       "C", "D", "E", "F"])
     self.textFieldText = Observable("")
-    self.textFieldPlaceholderText = Observable("tap to start")
-    self.buttonTitle = Observable("LOOK UP")
+    self.textFieldPlaceholderText = Observable(Constants.UIString.textFieldTapToStart)
+    self.buttonTitle = Observable(Constants.UIString.buttonTitleLookUp)
     self.textViewText = Observable("RESULTS")
     self.textFieldTextLength = Observable(0)
     self.segmentedControlSelectedSegment = Observable(0)
@@ -98,7 +98,7 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
     if (segmentedControlSelectedSegment.value == 0 || segmentedControlSelectedSegment.value == 2) {
       var macAddress: String
       if countElements(textFieldText.value) == 6 {
-        macAddress = textFieldText.value + "00:00:00"
+        macAddress = textFieldText.value + Constants.UIString.macAddressEmptySuffix
       } else {
         macAddress = textFieldText.value
       }
@@ -108,7 +108,7 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
             println(macAddressItem)
         }
       } else {
-        errorHandler(message: "Invalid MAC address")
+        errorHandler(message: Constants.UIString.messageInvalidMACAddress)
       }
     } else {
       var ipAddress = textFieldText.value
@@ -121,19 +121,19 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
                     case .Success(let macAddress):
                       self.viewTitle.value = macAddress()
                       self.textFieldText.value = self.formatMACAddressForPickerView(macAddress())
-                      self.buttonTitle.value = "LOOK UP"
+                      self.buttonTitle.value = Constants.UIString.buttonTitleLookUp
                       self.segmentedControlSelectedSegment.value = 0
                     case .Error(let error): errorHandler(message: error)
                 }
               } else {
-                errorHandler(message: "Destination host unreachable")
+                errorHandler(message: Constants.UIString.messageDestinationHostUnreachable)
               }
           }
         } else {
-          errorHandler(message: "Invalid IP address")
+          errorHandler(message: Constants.UIString.messageInvalidIPAddress)
         }
       } else {
-        errorHandler(message: "No local WiFi connection")
+        errorHandler(message: Constants.UIString.messageNoLocalWiFiConnection)
       }
     }
   }
@@ -144,11 +144,11 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
 
     switch selectedSegment {
     case 0:
-      buttonTitle.value = "LOOK UP"
+      buttonTitle.value = Constants.UIString.buttonTitleLookUp
     case 1:
-      buttonTitle.value = "RESOLVE IP ADDRESS"
+      buttonTitle.value = Constants.UIString.buttonTitleResolveIPAddress
     case 2:
-      buttonTitle.value = "LOOK UP"
+      buttonTitle.value = Constants.UIString.buttonTitleLookUp
     default:
       return
     }

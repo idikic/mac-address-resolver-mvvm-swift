@@ -20,6 +20,7 @@
 		4DA38A6D1A8A4C8F00F1F512 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA38A6C1A8A4C8F00F1F512 /* Alerts.swift */; };
 		4DA38A6F1A8A4DCA00F1F512 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA38A6E1A8A4DCA00F1F512 /* Observable.swift */; };
 		4DA38A711A8A512000F1F512 /* MACAddressDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA38A701A8A512000F1F512 /* MACAddressDetailViewViewModel.swift */; };
+		4DD12AC01A99E2CF001BE77F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD12ABF1A99E2CF001BE77F /* Constants.swift */; };
 		6947D818198104F600640A15 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6947D817198104F600640A15 /* Downloader.swift */; };
 		694D59D0197BC11400C53907 /* MACAddressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D59CF197BC11400C53907 /* MACAddressDetailViewController.swift */; };
 		696F1F51197E7B1000906434 /* MACScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F1F50197E7B1000906434 /* MACScannerViewController.swift */; };
@@ -59,6 +60,7 @@
 		4DA38A6C1A8A4C8F00F1F512 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		4DA38A6E1A8A4DCA00F1F512 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		4DA38A701A8A512000F1F512 /* MACAddressDetailViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressDetailViewViewModel.swift; sourceTree = "<group>"; };
+		4DD12ABF1A99E2CF001BE77F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		685C472B380845DE3C043D84 /* Pods_M_A_C_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_A_C_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6947D817198104F600640A15 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		694D59CF197BC11400C53907 /* MACAddressDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressDetailViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				4D2B165D1A823A8900487367 /* Regex.swift */,
 				4DA38A6C1A8A4C8F00F1F512 /* Alerts.swift */,
 				4DA38A6E1A8A4DCA00F1F512 /* Observable.swift */,
+				4DD12ABF1A99E2CF001BE77F /* Constants.swift */,
 			);
 			name = HELPERS;
 			path = 00_HELPERS;
@@ -428,6 +431,7 @@
 				4DA38A6B1A8A3D6500F1F512 /* MACAddressDetailViewModel.swift in Sources */,
 				69BEF1141976C1EC0063DF1A /* MACAddressListTableViewController.swift in Sources */,
 				699D060819829AF200993203 /* NSString+IPHelper.m in Sources */,
+				4DD12AC01A99E2CF001BE77F /* Constants.swift in Sources */,
 				699D061419829BC800993203 /* SimplePingHelper.m in Sources */,
 				4DA38A6F1A8A4DCA00F1F512 /* Observable.swift in Sources */,
 				69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */,

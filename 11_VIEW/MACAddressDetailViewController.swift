@@ -22,6 +22,12 @@ class MACAddressDetailViewController: UIViewController {
 
   @IBOutlet weak var textField: UITextField! {
     didSet {
+      textField.layer.borderColor = UIColor(red:0.04,
+                                            green:0.5,
+                                            blue:1,
+                                            alpha:1).CGColor
+      textField.layer.borderWidth = Constants.UIGeometry.borderWidth as CGFloat
+      textField.layer.cornerRadius = Constants.UIGeometry.cornerRadius as CGFloat
       textField.clearButtonMode = UITextFieldViewMode.Always
       textField.addTarget(self,
                           action: Selector("textFieldTextDidChange:"),
@@ -30,7 +36,16 @@ class MACAddressDetailViewController: UIViewController {
   }
 
   @IBOutlet weak var button: UIButton!
-  @IBOutlet weak var textView: UITextView!
+  @IBOutlet weak var textView: UITextView! {
+    didSet {
+      textView.layer.borderColor = UIColor(red:0.04,
+        green:0.5,
+        blue:1,
+        alpha:1).CGColor
+      textView.layer.borderWidth = Constants.UIGeometry.borderWidth as CGFloat
+      textView.layer.cornerRadius = Constants.UIGeometry.cornerRadius as CGFloat
+    }
+  }
 
   var macAddressItem: MACAddressItem?
   lazy var pickerView: UIPickerView = {
@@ -78,7 +93,7 @@ class MACAddressDetailViewController: UIViewController {
         self.textField.keyboardType = .NumbersAndPunctuation
 
       case 2:
-        self.performSegueWithIdentifier("BarcodeScannerSegue",
+        self.performSegueWithIdentifier(Constants.UISegue.barcodeScannerSegue,
                                         sender: self.segmentedControl)
       default:
         return
