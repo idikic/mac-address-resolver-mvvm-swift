@@ -22,6 +22,7 @@ struct Constants {
     static let messageNoLocalWiFiConnection = "No local WiFi connection"
     static let messageDestinationHostUnreachable = "Destination host unreachable"
     static let messageInvalidMACAddress = "Invalid MAC address"
+    static let messageGenericError = "Ooops, please try again :)"
 
     static let textFieldTapToStart = "tap to start"
 

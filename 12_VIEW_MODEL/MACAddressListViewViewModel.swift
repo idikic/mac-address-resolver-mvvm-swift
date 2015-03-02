@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MACAddressListViewViewModel : MACAddressListViewModel {
+class MACAddressListViewViewModel: MACAddressListViewModel {
 
   let viewTitle: Observable<String>
   let macAddressStore: MACAddressStore

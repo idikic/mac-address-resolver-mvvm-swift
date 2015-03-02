@@ -129,6 +129,18 @@ class MACAddressDetailViewController: UIViewController {
     }
   }
 
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == Constants.UISegue.barcodeScannerSegue {
+      var destinationViewController =
+        segue.destinationViewController as MACScannerViewController
+
+      var destinationViewModel =
+        MACScannerViewViewModel(frameForCameraPreviewLayer: view.frame)
+
+      destinationViewController.viewModel = destinationViewModel
+    }
+  }
+
   // MARK: Internal Helpers
   func textFieldTextDidChange(textField: UITextField!) {
     viewModel.textFieldTextDidChange(textField.text)

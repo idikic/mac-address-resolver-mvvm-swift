@@ -21,6 +21,8 @@
 		4DA38A6F1A8A4DCA00F1F512 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA38A6E1A8A4DCA00F1F512 /* Observable.swift */; };
 		4DA38A711A8A512000F1F512 /* MACAddressDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA38A701A8A512000F1F512 /* MACAddressDetailViewViewModel.swift */; };
 		4DD12AC01A99E2CF001BE77F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD12ABF1A99E2CF001BE77F /* Constants.swift */; };
+		4DF67EBC1AA31D25008CB490 /* MACScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF67EBB1AA31D25008CB490 /* MACScannerViewModel.swift */; };
+		4DF67EBE1AA31D38008CB490 /* MACScannerViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF67EBD1AA31D38008CB490 /* MACScannerViewViewModel.swift */; };
 		6947D818198104F600640A15 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6947D817198104F600640A15 /* Downloader.swift */; };
 		694D59D0197BC11400C53907 /* MACAddressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D59CF197BC11400C53907 /* MACAddressDetailViewController.swift */; };
 		696F1F51197E7B1000906434 /* MACScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F1F50197E7B1000906434 /* MACScannerViewController.swift */; };
@@ -61,6 +63,8 @@
 		4DA38A6E1A8A4DCA00F1F512 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		4DA38A701A8A512000F1F512 /* MACAddressDetailViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressDetailViewViewModel.swift; sourceTree = "<group>"; };
 		4DD12ABF1A99E2CF001BE77F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4DF67EBB1AA31D25008CB490 /* MACScannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACScannerViewModel.swift; sourceTree = "<group>"; };
+		4DF67EBD1AA31D38008CB490 /* MACScannerViewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACScannerViewViewModel.swift; sourceTree = "<group>"; };
 		685C472B380845DE3C043D84 /* Pods_M_A_C_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_A_C_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6947D817198104F600640A15 /* Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		694D59CF197BC11400C53907 /* MACAddressDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressDetailViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				4D16C94E1A87668700A89738 /* MACAddressListViewViewModel.swift */,
 				4DA38A6A1A8A3D6500F1F512 /* MACAddressDetailViewModel.swift */,
 				4DA38A701A8A512000F1F512 /* MACAddressDetailViewViewModel.swift */,
+				4DF67EBB1AA31D25008CB490 /* MACScannerViewModel.swift */,
+				4DF67EBD1AA31D38008CB490 /* MACScannerViewViewModel.swift */,
 			);
 			name = "VIEW MODEL";
 			path = 12_VIEW_MODEL;
@@ -421,9 +427,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */,
+				4DF67EBC1AA31D25008CB490 /* MACScannerViewModel.swift in Sources */,
 				69765F401977B8B600060E8A /* MACAddressStore.swift in Sources */,
 				4D16C94F1A87668700A89738 /* MACAddressListViewViewModel.swift in Sources */,
 				4DA38A711A8A512000F1F512 /* MACAddressDetailViewViewModel.swift in Sources */,
+				4DF67EBE1AA31D38008CB490 /* MACScannerViewViewModel.swift in Sources */,
 				6947D818198104F600640A15 /* Downloader.swift in Sources */,
 				4D16C94D1A875BDF00A89738 /* MACAddressListViewModel.swift in Sources */,
 				4D2B165E1A823A8900487367 /* Regex.swift in Sources */,
