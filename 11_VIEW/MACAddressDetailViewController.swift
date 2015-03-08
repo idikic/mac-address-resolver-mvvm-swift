@@ -134,9 +134,7 @@ class MACAddressDetailViewController: UIViewController {
       var destinationViewController =
         segue.destinationViewController as MACScannerViewController
 
-      var destinationViewModel =
-        MACScannerViewViewModel(frameForCameraPreviewLayer: view.frame)
-
+      var destinationViewModel = MACScannerViewViewModel()
       destinationViewController.viewModel = destinationViewModel
     }
   }

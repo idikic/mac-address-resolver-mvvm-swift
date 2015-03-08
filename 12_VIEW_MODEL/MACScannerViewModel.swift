@@ -10,6 +10,7 @@ import Foundation
 
 protocol MACScannerViewModel {
 
-  func startScanningBarcode(completionHandler: String -> ())
+  var viewTitle: Observable<String> { get }
+  func barcodeScanned(macAddress: String)
 
 }

@@ -12,6 +12,7 @@ import AVFoundation
 class MACScannerViewController: UIViewController {
 
   var macAddress: String?
+  var macScanner: Scanner?
   var viewModel: MACScannerViewViewModel!
 
   // MARK: View Lifecycle
@@ -22,6 +23,10 @@ class MACScannerViewController: UIViewController {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(true)
+
+    macScanner = Scanner(frameForCameraPreviewLayer: self.view.frame)
+    view.layer.addSublayer(macScanner?.previewLayer)
+
     bindToViewModel()
   }
   
@@ -31,10 +36,10 @@ class MACScannerViewController: UIViewController {
 
   // MARK: Binding
   private func bindToViewModel() {
-    view.layer.addSublayer(viewModel.previewLayer)
-    viewModel.startScanningBarcode() {
-      (macAddress) in
+    macScanner?.startScanningBarcode() {
+      [unowned self](macAddress) in
       println(macAddress)
+      self.viewModel.barcodeScanned(macAddress)
     }
   }
 }

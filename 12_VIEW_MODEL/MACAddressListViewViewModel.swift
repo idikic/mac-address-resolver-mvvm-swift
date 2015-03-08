@@ -18,6 +18,7 @@ class MACAddressListViewViewModel: MACAddressListViewModel {
     self.viewTitle = Observable("Devices")
   }
 
+  // MARK: UITableView
   func numberOfSections() -> Int {
     return 1
   }
@@ -38,6 +39,7 @@ class MACAddressListViewViewModel: MACAddressListViewModel {
     macAddressStore.removeItemAt(row)
   }
 
+  // MARK: View Model
   func viewModelForMACAddressDetailView() -> MACAddressDetailViewViewModel {
     return MACAddressDetailViewViewModel(macAddress: nil)
   }

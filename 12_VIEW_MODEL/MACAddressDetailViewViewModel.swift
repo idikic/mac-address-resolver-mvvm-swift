@@ -158,11 +158,11 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
   }
 
   // MARK: Internal Helpers
-  func validateMACAddress(macAddress: String) -> Bool {
+  internal func validateMACAddress(macAddress: String) -> Bool {
     return macAddress =~ kValidMACAddressRegex
   }
 
-  func formatMACAddressForPickerView(macAddress: String) -> String {
+  internal func formatMACAddressForPickerView(macAddress: String) -> String {
     var formattedMACAddress: String = ""
     for character in macAddress {
       if character != ":" {
@@ -174,7 +174,7 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
     return formattedMACAddress.substringToIndex(index)
   }
 
-  func prepareMACAddressItemForDisplay(resultMACAddressItem: MACAddressItem) -> String {
+  internal func prepareMACAddressItemForDisplay(resultMACAddressItem: MACAddressItem) -> String {
     var displayString: String = ""
 
     if let company = resultMACAddressItem.company {
@@ -194,11 +194,11 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
     return displayString
   }
 
-  func validateIPAddress(ipAddress: String) -> Bool {
+  internal func validateIPAddress(ipAddress: String) -> Bool {
     return (ipAddress as NSString).isValidIPAddress()
   }
 
-  func resolveMACAddressFromIPAddress(ipAddress: String) -> Result<String> {
+  internal func resolveMACAddressFromIPAddress(ipAddress: String) -> Result<String> {
 
     var result: Result<String>!
     IPHelper.macAddressFromIPAddress(ipAddress) {
@@ -214,13 +214,13 @@ class MACAddressDetailViewViewModel: MACAddressDetailViewModel {
     return result
   }
 
-  func isReachableForLocalWiFi() -> Bool {
+  internal func isReachableForLocalWiFi() -> Bool {
     var reachableWiFi = Reachability.reachabilityForLocalWiFi()
     var status = reachableWiFi.currentReachabilityStatus()
     return (status == .ReachableViaWiFi)
   }
 
-  func isReachableForInternetConnection() -> Bool {
+  internal func isReachableForInternetConnection() -> Bool {
     var reachableWWAN = Reachability.reachabilityForInternetConnection()
     var status = reachableWWAN.currentReachabilityStatus()
     return (status == .ReachableViaWWAN)

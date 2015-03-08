@@ -12,12 +12,15 @@ protocol MACAddressListViewModel {
 
   var viewTitle: Observable<String> { get }
   var macAddressStore: MACAddressStore { get }
+
+  // MARK: UITableView
   func numberOfSections() -> Int
   func numberOfItemsInSection() -> Int
   func macAddressAtRow(row: Int, inSection: Int) -> String
   func macAddressCreatedAtRow(row: Int, inSection: Int) -> String
   func macAddressDeleteAtRow(row: Int, inSection: Int)
 
+  // MARK: View Model
   func viewModelForMACAddressDetailView() -> MACAddressDetailViewViewModel
 
   init(macAddressStore: MACAddressStore)
