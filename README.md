@@ -12,9 +12,9 @@ It uses the first six digits of a MAC address, also known as OUI (Organisational
 
 ##Features: 
 
--> local database that can be updated through Settings 
--> online database (default), very small data usage 
--> three input modes: PICKER, IP, READER 
+-> local database that can be updated through Settings
+-> online database (default), very small data usage
+-> three input modes: PICKER, IP, READER
 
 ###PICKER: 
 -> classic spinner with 6 columns 
