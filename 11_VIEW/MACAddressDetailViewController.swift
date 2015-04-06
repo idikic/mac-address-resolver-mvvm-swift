@@ -55,7 +55,7 @@ class MACAddressDetailViewController: UIViewController {
     return tempPickerView
   }()
 
-  var viewModel: MACAddressDetailViewViewModel!
+  var viewModel: MACAddressDetailViewModel!
 
   // MARK: View Lifecycle
   override func viewDidLoad() {
@@ -134,7 +134,7 @@ class MACAddressDetailViewController: UIViewController {
       var destinationViewController =
         segue.destinationViewController as MACScannerViewController
 
-      var destinationViewModel = MACScannerViewViewModel()
+      var destinationViewModel = MACScannerViewModel()
       destinationViewController.viewModel = destinationViewModel
     }
   }

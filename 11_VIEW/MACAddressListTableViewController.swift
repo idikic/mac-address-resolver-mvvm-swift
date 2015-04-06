@@ -12,7 +12,7 @@ let AddNewMACAddressItemSegueIdentifier = "AddMACAddressItem"
 
 class MACAddressListTableViewController: UITableViewController {
 
-  var viewModel: MACAddressListViewViewModel?
+  var viewModel: MACAddressListViewModel?
 
   // MARK: Lifecycle
   override func viewDidLoad() {

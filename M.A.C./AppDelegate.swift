@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // TAB 0
     MACAddressStore.sharedStore.loadMockData()
-    let macAddressListViewViewModel = MACAddressListViewViewModel(macAddressStore: MACAddressStore.sharedStore)
+    let macAddressListViewViewModel = MACAddressListViewModel(macAddressStore: MACAddressStore.sharedStore)
     let tabBarController = self.window?.rootViewController as UITabBarController
     if let macAddressListTableViewController = tabBarController.viewControllers?[0].topViewController {
         (macAddressListTableViewController as MACAddressListTableViewController).viewModel = macAddressListViewViewModel

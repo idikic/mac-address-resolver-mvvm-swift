@@ -13,7 +13,7 @@ class MACScannerViewController: UIViewController {
 
   var macAddress: String?
   var macScanner: Scanner?
-  var viewModel: MACScannerViewViewModel!
+  var viewModel: MACScannerViewModel!
 
   // MARK: View Lifecycle
   override func viewDidLoad() {

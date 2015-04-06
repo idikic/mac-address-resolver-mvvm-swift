@@ -6,11 +6,10 @@
 //  Copyright (c) 2015 Iki. All rights reserved.
 //
 
-import Foundation
+class MACScannerViewModel {
 
-protocol MACScannerViewModel {
-
-  var viewTitle: Observable<String> { get }
-  func barcodeScanned(macAddress: String)
-
+  private (set) var viewTitle: Observable<String> = Observable("XX:XX:XX:XX:XX:XX")
+  func barcodeScanned(macAddress: String) {
+    viewTitle.value = macAddress
+  }
 }
