@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Ua-Il-03S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6Ua-Il-03S">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -28,7 +28,7 @@
         <!--Devices-->
         <scene sceneID="CxS-G1-gy4">
             <objects>
-                <tableViewController id="QLP-w8-ZKP" customClass="IKIMasterTableViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="QLP-w8-ZKP" customClass="MACAddressListTableViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hZn-Fz-9yA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,9 +53,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="mjN-uh-HRK" kind="presentation" id="kHQ-WR-6JN"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -65,7 +62,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Devices" id="ne1-YC-6DM">
                         <barButtonItem key="leftBarButtonItem" title="Item" systemItem="edit" id="18L-BN-a98"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Vid-UE-8Fi"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Vid-UE-8Fi">
+                            <connections>
+                                <segue destination="mjN-uh-HRK" kind="presentation" identifier="AddMACAddressItem" id="sh2-3Z-HvE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ol-aW-Rqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -75,7 +76,7 @@
         <!--MAC ADDRESS LOOKUP-->
         <scene sceneID="49p-p9-TKm">
             <objects>
-                <viewController id="Yec-kt-yz8" customClass="IKIDetailViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Yec-kt-yz8" customClass="MACAddressDetailViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N8N-Bg-KuD"/>
                         <viewControllerLayoutGuide type="bottom" id="hE1-rM-2GU"/>
@@ -96,9 +97,6 @@
                                 <rect key="frame" x="20" y="118" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Yec-kt-yz8" id="wgm-Zq-Wus"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3d6-Ym-CgW">
                                 <rect key="frame" x="210" y="173" width="181" height="30"/>
@@ -111,7 +109,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonDownload:" destination="Yec-kt-yz8" eventType="touchUpInside" id="pMc-nu-1Cv"/>
+                                    <action selector="buttonLookUpAction:" destination="Yec-kt-yz8" eventType="touchUpInside" id="vYd-cL-UwI"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="RESULTS" translatesAutoresizingMaskIntoConstraints="NO" id="eDi-6D-f6q">
@@ -138,33 +136,30 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="MAC ADDRESS LOOKUP" id="ZYm-VL-sYb">
-                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="ziv-J2-l9L">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Xmy-Am-Ikp">
                             <connections>
-                                <action selector="dismissDetailViewController:" destination="Yec-kt-yz8" id="CVS-dp-sI5"/>
+                                <segue destination="5Ry-uk-cNx" kind="unwind" unwindAction="unwindToMACAddressList:" id="LGi-N5-Sgf"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="a50-JE-9vM">
-                            <connections>
-                                <action selector="dismissDetailViewController:" destination="Yec-kt-yz8" id="NlE-q9-Fjb"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="oRm-Xn-yI9"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttonLookUp" destination="3d6-Ym-CgW" id="Nl7-pR-LOG"/>
-                        <outlet property="segmentedControlInputTypes" destination="pp8-ze-2Wv" id="uoN-oE-n5Z"/>
-                        <outlet property="textField" destination="Zeu-or-di2" id="M0N-yf-rRg"/>
-                        <outlet property="textViewResults" destination="eDi-6D-f6q" id="nxl-5Q-UwN"/>
+                        <outlet property="button" destination="3d6-Ym-CgW" id="L1H-Ty-Vty"/>
+                        <outlet property="segmentedControl" destination="pp8-ze-2Wv" id="SkU-ef-Np7"/>
+                        <outlet property="textField" destination="Zeu-or-di2" id="K1n-eT-nO9"/>
+                        <outlet property="textView" destination="eDi-6D-f6q" id="lge-Tu-ENV"/>
                         <segue destination="QmS-dX-ZNv" kind="show" identifier="BarcodeScannerSegue" id="iNE-ZX-uLT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVK-zV-rIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5Ry-uk-cNx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2875" y="-183"/>
         </scene>
         <!--BARCODE SCANNER-->
         <scene sceneID="m8m-06-KxW">
             <objects>
-                <viewController title="BARCODE SCANNER" id="QmS-dX-ZNv" customClass="IKIScannerViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="BARCODE SCANNER" id="QmS-dX-ZNv" customClass="MACScannerViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ptV-4V-ZYO"/>
                         <viewControllerLayoutGuide type="bottom" id="hkY-Ny-NeC"/>
@@ -427,7 +422,7 @@
         <!--About View Controller-->
         <scene sceneID="XKt-SQ-pVr">
             <objects>
-                <viewController id="3aU-1X-OwL" customClass="IKIAboutViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3aU-1X-OwL" customClass="AboutViewController" customModule="M_A_C_" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7WN-pk-5Xa"/>
                         <viewControllerLayoutGuide type="bottom" id="Ffs-Hm-VAW"/>

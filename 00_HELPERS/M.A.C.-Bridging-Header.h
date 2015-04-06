@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 #import <Reachability/Reachability.h>
-#import "NSString+IPValidation.h"
-#import "NetworkUtility.h"
+#import "NSString+IPHelper.h"
+#import "IPHelper.h"
 #import "SimplePingHelper.h"
