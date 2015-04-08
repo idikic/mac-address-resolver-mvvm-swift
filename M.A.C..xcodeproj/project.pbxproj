@@ -28,7 +28,6 @@
 		699D060819829AF200993203 /* NSString+IPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D060719829AF200993203 /* NSString+IPHelper.m */; };
 		699D061319829BC800993203 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D061019829BC800993203 /* SimplePing.m */; };
 		699D061419829BC800993203 /* SimplePingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 699D061219829BC800993203 /* SimplePingHelper.m */; };
-		69BDA25B1982684800E38FBB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BDA25A1982684800E38FBB /* StringExtensions.swift */; };
 		69BEF1141976C1EC0063DF1A /* MACAddressListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1131976C1EC0063DF1A /* MACAddressListTableViewController.swift */; };
 		69BEF1171976C3C80063DF1A /* MACAddressItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BEF1161976C3C80063DF1A /* MACAddressItem.swift */; };
 		69D4D61C1976B80900907FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D4D61B1976B80900907FA7 /* AppDelegate.swift */; };
@@ -79,7 +78,6 @@
 		699D061019829BC800993203 /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
 		699D061119829BC800993203 /* SimplePingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePingHelper.h; sourceTree = "<group>"; };
 		699D061219829BC800993203 /* SimplePingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePingHelper.m; sourceTree = "<group>"; };
-		69BDA25A1982684800E38FBB /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		69BEF1131976C1EC0063DF1A /* MACAddressListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressListTableViewController.swift; sourceTree = "<group>"; };
 		69BEF1161976C3C80063DF1A /* MACAddressItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MACAddressItem.swift; sourceTree = "<group>"; };
 		69D4D6161976B80900907FA7 /* M.A.C..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M.A.C..app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,7 +150,6 @@
 				694D59D1197BD3A800C53907 /* HEADERS */,
 				694D59D2197BD4E300C53907 /* M.A.C.-Bridging-Header.h */,
 				6947D817198104F600640A15 /* Downloader.swift */,
-				69BDA25A1982684800E38FBB /* StringExtensions.swift */,
 				4D2B165D1A823A8900487367 /* Regex.swift */,
 				4DA38A6C1A8A4C8F00F1F512 /* Alerts.swift */,
 				4DA38A6E1A8A4DCA00F1F512 /* Observable.swift */,
@@ -428,7 +425,6 @@
 				6947D818198104F600640A15 /* Downloader.swift in Sources */,
 				4DB45E2B1AACBCA90053C5C8 /* Scanner.swift in Sources */,
 				4D2B165E1A823A8900487367 /* Regex.swift in Sources */,
-				69BDA25B1982684800E38FBB /* StringExtensions.swift in Sources */,
 				69BEF1141976C1EC0063DF1A /* MACAddressListTableViewController.swift in Sources */,
 				699D060819829AF200993203 /* NSString+IPHelper.m in Sources */,
 				4DD12AC01A99E2CF001BE77F /* Constants.swift in Sources */,

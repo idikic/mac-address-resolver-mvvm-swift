@@ -1,3 +1,8 @@
+/*
+ *  Based on the nice article from:
+ *  http://rasic.info/from-mvc-to-mvvm-in-swift/
+ */
+
 import UIKit
 import Foundation
 

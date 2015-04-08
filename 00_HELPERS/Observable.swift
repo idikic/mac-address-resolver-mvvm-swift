@@ -1,6 +1,9 @@
 //
-//  Dynamic.swift
+//  Observable.swift
 //  M.A.C.
+//
+//  Based on:
+//  http://rasic.info/from-mvc-to-mvvm-in-swift/
 //
 //  Created by Ivan Dikic on 10/02/15.
 //  Copyright (c) 2015 Iki. All rights reserved.
