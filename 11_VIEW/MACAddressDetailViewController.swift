@@ -129,6 +129,12 @@ class MACAddressDetailViewController: UIViewController {
     }
   }
 
+  @IBAction func buttonSaveAction(sender: AnyObject) {
+    NSException(name: NSGenericException,
+              reason: "Behaviour not implemented yet",
+              userInfo: nil).raise()
+  }
+
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == Constants.UISegue.barcodeScannerSegue {
       var destinationViewController =
