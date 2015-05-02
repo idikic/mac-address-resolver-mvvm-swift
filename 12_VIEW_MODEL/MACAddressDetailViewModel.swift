@@ -10,16 +10,15 @@ import Foundation
 import Reachability
 
 enum Result<T> {
-  // This might not be a desired behaviour, BUT this is
-  // the only way for now to have a enum used in the protocol as
-  // a return type. Swfit need to know full layout size of the enum
-  // at a compile time.
-  //
-  // More info at:
-  //
-  // http://owensd.io/2014/08/06/fixed-enum-layout.html
-  case Success(@autoclosure() -> T)
+  case Success(Box<T>)
   case Error(String)
+}
+
+final public class Box<T> {
+  public let unbox: T
+  public init(_ value: T) {
+    self.unbox = value
+  }
 }
 
 class MACAddressDetailViewModel {
@@ -51,7 +50,6 @@ class MACAddressDetailViewModel {
     self.textViewText = Observable("RESULTS")
     self.textFieldTextLength = Observable(0)
     self.segmentedControlSelectedSegment = Observable(0)
-
   }
 
   // MARK: UIPicker View
@@ -97,7 +95,7 @@ class MACAddressDetailViewModel {
   func resolve(errorHandler: (message: String?) -> ()) {
     if (segmentedControlSelectedSegment.value == 0 || segmentedControlSelectedSegment.value == 2) {
       var macAddress: String
-      if countElements(textFieldText.value) == 6 {
+      if count(textFieldText.value) == 6 {
         macAddress = textFieldText.value + Constants.UIString.macAddressEmptySuffix
       } else {
         macAddress = textFieldText.value
@@ -122,8 +120,8 @@ class MACAddressDetailViewModel {
               if success {
                 switch self.resolveMACAddressFromIPAddress(ipAddress) {
                     case .Success(let macAddress):
-                      self.viewTitle.value = macAddress()
-                      self.textFieldText.value = self.formatMACAddressForPickerView(macAddress())
+                      self.viewTitle.value = macAddress.unbox
+                      self.textFieldText.value = self.formatMACAddressForPickerView(macAddress.unbox)
                       self.buttonTitle.value = Constants.UIString.buttonTitleLookUp
                       self.segmentedControlSelectedSegment.value = 0
                     case .Error(let error): errorHandler(message: error)
@@ -205,7 +203,7 @@ class MACAddressDetailViewModel {
       (macAddress, error) in
 
       if macAddress != nil {
-        result = .Success(macAddress)
+        result = .Success(Box(macAddress))
       } else {
         result = .Error(error)
       }

@@ -41,7 +41,7 @@ class MACAddressListTableViewController: UITableViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 
     var destinationViewController =
-      segue.destinationViewController.topViewController as MACAddressDetailViewController
+      segue.destinationViewController.topViewController as! MACAddressDetailViewController
 
     if segue.identifier == AddNewMACAddressItemSegueIdentifier {
       let viewModel = self.viewModel?.viewModelForMACAddressDetailView()
@@ -64,7 +64,7 @@ extension MACAddressListTableViewController: UITableViewDataSource {
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("devicesCell", forIndexPath: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("devicesCell", forIndexPath: indexPath) as! UITableViewCell
     cell.textLabel?.text = viewModel?.macAddressAtRow(indexPath.row, inSection: indexPath.section)
     cell.detailTextLabel?.text = viewModel?.macAddressCreatedAtRow(indexPath.row, inSection: indexPath.section)
     return cell

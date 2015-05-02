@@ -18,33 +18,36 @@ class MACAddressItem: NSObject , NSCoding {
   var address2: String?
   var country: String?
   var locationOfDevice: String?
+  override var description: String {
+    get {
+      var stringDescription: String
+        = "I'am MAC:\(self.macAddress), created at:\(self.dateCreated)"
+      return stringDescription
+    }
+  }
 
   // MARK: Lifecycle
   init?(macAddress: String) {
+  
+    self.macAddress = macAddress
+    self.dateCreated = NSDate()
 
-    // When dealing with NSObject we need to call super.init() before
-    // returning nil from within failable initializer('init?').
-    // If not compiler will complain that all stored properties must
-    // have an initial value.
-    // For all other cases, we have to call super.init() after all of the stored
-    // properties have an initial value.
     super.init()
+
     if macAddress.isEmpty {
       return nil
     }
 
-    self.macAddress = macAddress
-    self.dateCreated = NSDate()
   }
 
   required init(coder aDecoder: NSCoder) {
-    self.macAddress = aDecoder.decodeObjectForKey("macAddress") as String
+    self.macAddress = aDecoder.decodeObjectForKey("macAddress") as! String
     self.company = aDecoder.decodeObjectForKey("company") as? String
     self.address1 = aDecoder.decodeObjectForKey("address1") as? String
     self.address2 = aDecoder.decodeObjectForKey("address2") as? String
     self.country = aDecoder.decodeObjectForKey("country") as? String
     self.locationOfDevice = aDecoder.decodeObjectForKey("locationOfDevice") as? String
-    self.dateCreated = aDecoder.decodeObjectForKey("dateCreated") as NSDate
+    self.dateCreated = aDecoder.decodeObjectForKey("dateCreated") as! NSDate
   }
 
   func encodeWithCoder(aCoder: NSCoder) {
@@ -57,9 +60,4 @@ class MACAddressItem: NSObject , NSCoding {
     aCoder.encodeObject(dateCreated, forKey: "dateCreated")
   }
 
-  // MARK: Public Interface
-  func description() -> String {
-    var stringDescription: String = "I'am MAC:\(self.macAddress), created at:\(self.dateCreated)"
-    return stringDescription
-  }
 }

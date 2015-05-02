@@ -147,9 +147,9 @@ extension Scanner: AVCaptureMetadataOutputObjectsDelegate {
       for object in metadataObjects {
         if object.isKindOfClass(AVMetadataMachineReadableCodeObject) {
           let transformedMetaDataObject =
-          self.previewLayer?.transformedMetadataObjectForMetadataObject(object as AVMetadataObject)
+          self.previewLayer?.transformedMetadataObjectForMetadataObject(object as! AVMetadataObject)
 
-          let barcodeCode = transformedMetaDataObject as AVMetadataMachineReadableCodeObject
+          let barcodeCode = transformedMetaDataObject as! AVMetadataMachineReadableCodeObject
           self.completionHandler(barcodeCode.stringValue)
           stopRunning()
           return

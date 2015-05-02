@@ -28,7 +28,7 @@ class MACAddressStore: NSObject {
     super.init()
     let unarchivedItems : AnyObject! = NSKeyedUnarchiver.unarchiveObjectWithFile(itemArchivedPath)
     if unarchivedItems != nil {
-      _privateItems = unarchivedItems as Array<MACAddressItem>
+      _privateItems = unarchivedItems as! Array<MACAddressItem>
     }
   }
 
@@ -70,7 +70,7 @@ class MACAddressStore: NSObject {
     get {
       let documentDirectories = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory,
           NSSearchPathDomainMask.UserDomainMask, true)
-      let documentDirectory = documentDirectories[0] as String
+      let documentDirectory = documentDirectories[0] as! String
       return documentDirectory.stringByAppendingPathComponent("items.archive")
     }
   }

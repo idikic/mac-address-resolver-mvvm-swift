@@ -132,7 +132,7 @@ class MACAddressDetailViewController: UIViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == Constants.UISegue.barcodeScannerSegue {
       var destinationViewController =
-        segue.destinationViewController as MACScannerViewController
+        segue.destinationViewController as! MACScannerViewController
 
       var destinationViewModel = MACScannerViewModel()
       destinationViewController.viewModel = destinationViewModel
@@ -152,12 +152,12 @@ class MACAddressDetailViewController: UIViewController {
 // MARK: UIPicker View Delegate
 extension MACAddressDetailViewController: UIPickerViewDelegate {
 
-  func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String! {
+  func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
     return viewModel.pickerView(titleForRow: row)
   }
 
   func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    viewModel.textFieldTextLength(countElements(textField.text))
+    viewModel.textFieldTextLength(count(textField.text))
     viewModel.textFieldTextDidChange(textField.text)
     return viewModel.pickerView(didSelectRow: row, inComponent: component)
   }
